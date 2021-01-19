@@ -7,6 +7,8 @@ E:/Excercises/Vivado/GenPurReg/GenPurReg.srcs/sources_1/new/AC.v,1604134473,veri
 E:/Excercises/Vivado/GenPurReg/GenPurReg.srcs/sources_1/new/AC_tb.v,1604135056,verilog,,,,ac_tb,,,,,,,,
 E:/Excercises/Vivado/GenPurReg/GenPurReg.srcs/sources_1/new/GenPR.v,1603991106,verilog,,E:/Excercises/Vivado/GenPurReg/GenPurReg.srcs/sources_1/new/GenPRTB.v,,Genaral_Purpose_Register,,,,,,,,
 E:/Excercises/Vivado/GenPurReg/GenPurReg.srcs/sources_1/new/GenPRTB.v,1603990294,verilog,,,,genPregtb,,,,,,,,
+E:/Excercises/Vivado/GenPurReg/GenPurReg.srcs/sources_1/new/Mat_X.v,1610892412,verilog,,E:/Excercises/Vivado/GenPurReg/GenPurReg.srcs/sources_1/new/Mat_X_TB.v,,Mat_X,,,,,,,,
+E:/Excercises/Vivado/GenPurReg/GenPurReg.srcs/sources_1/new/Mat_X_TB.v,1610891166,verilog,,,,Mat_X_TB,,,,,,,,
 E:/Excercises/Vivado/GenPurReg/GenPurReg.srcs/sources_1/new/PC.v,1603989248,verilog,,E:/Excercises/Vivado/GenPurReg/GenPurReg.srcs/sources_1/new/PC_tb.v,,PC,,,,,,,,
 E:/Excercises/Vivado/GenPurReg/GenPurReg.srcs/sources_1/new/PC_tb.v,1603989432,verilog,,,,PC_tb,,,,,,,,
 E:/Excercises/Vivado/GenPurReg/GenPurReg.srcs/sources_1/new/dram.v,1604139130,verilog,,E:/Excercises/Vivado/GenPurReg/GenPurReg.srcs/sources_1/new/dram_tb.v,,dram,,,,,,,,

@@ -1,17 +1,14 @@
 module Genaral_Purpose_Register
-    (input clk,write,read,
+    (input clk,write,
     input [15:0] data_in,
-    output reg [15:0] data_out,
-    output reg [15:0] data_store);
+    output reg [15:0] data_out
+    );
     
-    reg [15:0] data_store;
 
-    always @(negedge clk)
-        begin
-            if (read) data_out <= data_store;
-        end
+
+    
      always @(posedge clk)
         begin
-            if (write) data_store <= data_in;
+            if (write) data_out <= data_in;
         end
 endmodule
