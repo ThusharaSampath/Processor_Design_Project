@@ -1,92 +1,101 @@
 module CU(
     input clk,
-    input [15:0] z,
-    input [15:0] instruction,
+    input [0:0] z,
+    input [0:0] i,
+    input [0:0] j,
+    input [0:0] k,
+    input [7:0] instruction,
     output reg[2:0] to_alu,
-    output reg[15:0] w_en,
-    output reg[15:0] inc,
-    output reg[3:0] r_en,
-    output reg finish,
-    input [1:0] status
+    output reg[0:0] to_DM,
+    output reg[0:0] to_IM,
+    output reg[3:0] to_REG,
+    output reg[3:0] to_BUS,
+    output reg[3:0] to_PC,
+    output reg[2:0] to_AC,
+    output reg[0:0] En_Select,
+    output reg[0:0] RW_Select,
+    output reg finish
+//    input [1:0] status
 );
 reg [5:0] PS = 6'd0;
 reg [5:0] NS = 6'd0;
-localparam
-IDLE = 6'd0,
-FETCH1 = 6'd1,
-FETCH2 = 6'd2,
-FETCHX = 6'd44,
-LDAC1 = 6'd3,
-LDAC2 = 6'd4,
-LDAC1X = 6'd50,
-LDAC2X = 6'd51,
-ACTOR = 6'd5,
-ACTOR1 = 6'd6,
-ACTOR2 = 6'd7,
-ACTOR3 = 6'd8,
-ACTOR4 = 6'd9,
-ACTOR5 = 6'd10,
-ACTODAR = 6'd11,
-RTOAC = 6'd12,
-R1TOAC = 6'd13,
-R2TOAC = 6'd14,
-R3TOAC = 6'd15,
-R4TOAC = 6'd16,
-R5TOAC = 6'd17,
-DARTOAC = 6'd18,
-STAC = 6'd19,
-STAC2 = 6'd43,
-STACX = 6'd49,
-STACY = 6'd52,
-ADD1 = 6'd20,
-ADD2 = 6'd21,
-SUB1 = 6'd22,
-SUB2 = 6'd23,
-SHIFTLEFT1 = 6'd24,
-SHIFTLEFT2 = 6'd25,
-SHIFTRIGHT1 = 6'd26,
-SHIFTRIGHT2 = 6'd27,
-INAC = 6'd28,
-INDAR = 6'd29,
-INR1 = 6'd30,
-INR2 = 6'd31,
-INR3 = 6'd32,
-LDIM1 = 6'd33,
-LDIM2 = 6'd34,
-LDIMX = 6'd45,
-JMPZ1 = 6'd35,
-JMPZ2 = 6'd36,
-JMPZ3 = 6'd37,
-JMPZ4 = 6'd38,
-JMPZ2X = 6'd46,
-JMPZ3X = 6'd47,
-JMPZ4X = 6'd48,
-JMPNZ1 = 6'd39,
-JMP1 = 6'd40,
-NOP = 6'd41,
-ENDOP = 6'd42;
+
+    parameter FETCH1 = 8'd0;
+    parameter FETCH2 = 8'd1;
+    parameter FETCH3 = 8'd2;
+    parameter NOP = 8'd3;
+    parameter END = 8'd4;
+    parameter CLR1 = 8'd5;
+    parameter CLR2 = 8'd6;
+    parameter CLR3 = 8'd7;
+    parameter LOAD1 = 8'd8;
+    parameter LOAD2 = 8'd9;
+    parameter LOAD3 = 8'd10;
+    parameter LOAD4 = 8'd11;
+    parameter LOAD5 = 8'd12;
+    parameter LOAD6 = 8'd13;
+    parameter LOADM1 = 8'd14;
+    parameter LOADM2 = 8'd15;
+    parameter LOADM3 = 8'd16;
+    parameter LOADM4 = 8'd17;
+    parameter STAC1 = 8'd18;
+    parameter STAC2 = 8'd19;
+    parameter STAC3 = 8'd20;
+    parameter INC1 = 8'd21;
+    parameter INC2 = 8'd22;
+    parameter INC3 = 8'd23;
+    parameter INC4 = 8'd24;
+    parameter INC5 = 8'd25;
+    parameter INC6 = 8'd26;
+    parameter INCAC1 = 8'd27;
+    parameter JUMP = 8'd28;
+    parameter JUMPY1 = 8'd29;
+    parameter JUMPY2 = 8'd30;
+    parameter JUMPY3 = 8'd31;
+    parameter JUMPN1 = 8'd32;
+    parameter MOVE1 = 8'd33;
+    parameter MOVE2 = 8'd34;
+    parameter MOVE3 = 8'd35;
+    parameter MOVE4 = 8'd36;
+    parameter MOVE5 = 8'd37;
+    parameter ADD = 8'd38;
+    parameter SUB = 8'd39;
+    parameter MUL = 8'd40;
+    parameter AND = 8'd41;
+    parameter OR = 8'd42;
 always @(posedge clk)
 PS <= NS;
 always @(posedge clk)
 begin
-if (PS == ENDOP)
+if (PS == END)
 finish <= 1'd1;
 else
 finish <= 1'd0;
 end
-always @(PS or z or instruction or status)
+always @(PS or z or instruction)
 case(PS)
-IDLE: begin
-if (status == 2'b01)
+NOP: begin
 NS = FETCH1;
-else
-NS = IDLE;
 end
 FETCH1: begin
-NS = FETCHX;
-end
-FETCHX: begin
+to_ALU = 3'd0;
+to_BUS = 4'd12;
+to_REG = 4'd1;
+to_IM = 1'd0;
+to_DM = 1'd0;
+En_Select = 1'd0;
+RW_Select = 1'd0;
 NS = FETCH2;
+end
+FETCH2: begin
+to_ALU = 3'd0;
+to_BUS = 4'd12;
+to_REG = 4'd1;
+to_IM = 1'd0;
+to_DM = 1'd0;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = FETCH3;
 end
 FETCH2: begin
 NS = instruction[5:0];
@@ -94,3 +103,5 @@ end
 LDAC1: begin
 NS = LDAC1X;
 end
+
+endmodule
