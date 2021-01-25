@@ -10,7 +10,7 @@ module Mat_X
     
 
 
-     always @(posedge clk or negedge clk )
+     always @(*)
         begin
             Mat_data_out <= Y*X_Ref + X+Base;
         end

@@ -7,7 +7,7 @@ module ac (
 
     
 
-    always @(posedge clk ) 
+    always @(*) 
         begin
             if (writealu) data_out = data_inalu;
             else if (rstac) data_out =0;

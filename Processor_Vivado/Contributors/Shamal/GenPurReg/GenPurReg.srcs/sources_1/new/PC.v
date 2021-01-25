@@ -6,8 +6,7 @@ module PC
     );
        
 
-    
-     always @(posedge clk)
+      always @(negedge clk)
         begin
             if (write) data_out <= data_in;
             else if (incpc) data_out <= data_out + 1;

@@ -26,7 +26,7 @@ module IRAM(
     
     initial begin
     end
-always @(posedge clk) begin
+always @(*) begin
 if (write == 1)
 MEM[address] <= instr_in[7:0];
 else
