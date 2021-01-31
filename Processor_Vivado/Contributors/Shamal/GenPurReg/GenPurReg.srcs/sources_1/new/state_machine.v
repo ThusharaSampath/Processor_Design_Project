@@ -237,6 +237,7 @@ to_AC = 3'b000;
 En_Select = 1'd1;
 RW_Select = 1'd1;
 NS = FETCH1;
+end
 
 endcase
 end
