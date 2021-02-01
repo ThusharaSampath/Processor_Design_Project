@@ -1,3 +1,4 @@
+// write === 1
 module CU(
     input clk,
     input [0:0] z,
@@ -121,7 +122,7 @@ end
 CLR1: begin
 to_ALU = 3'd0;
 to_BUS = 4'd7;
-to_REG = 5'd5;
+to_REG = 5'd6;
 to_IM = 1'd0;
 to_DM = 1'd0;
 to_PC = 1'd1;
@@ -157,7 +158,7 @@ end
 LOAD1: begin
 to_ALU = 3'd0;
 to_BUS = 4'd0;
-to_REG = 5'd5;
+to_REG = 5'd6;
 to_IM = 1'd0;
 to_DM = 1'd0;
 to_PC = 1'd1;
@@ -238,7 +239,306 @@ En_Select = 1'd1;
 RW_Select = 1'd1;
 NS = FETCH1;
 end
-
+LOADM1: begin
+to_ALU = 3'd0;
+to_BUS = 4'd0;
+to_REG = 5'd6;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd1;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = LOADM2;
+end
+LOADM2: begin
+to_ALU = 3'd0;
+to_BUS = 4'd0;
+to_REG = 5'd1;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b000;
+En_Select = 1'd1;
+RW_Select = 1'd0;
+NS = LOADM3;
+end
+LOADM3: begin
+to_ALU = 3'd0;
+to_BUS = 4'd0;
+to_REG = 5'd5;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd1;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = LOADM4;
+end
+LOADM4: begin
+to_ALU = 3'd1;
+to_BUS = 4'd7;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b100;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = FETCH1;
+end
+STAC1: begin
+to_ALU = 3'd0;
+to_BUS = 4'd0;
+to_REG = 5'd6;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd1;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = STAC2;
+end
+STAC2: begin
+to_ALU = 3'd0;
+to_BUS = 4'd7;
+to_REG = 5'd1;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = STAC3;
+end
+STAC3: begin
+to_ALU = 3'd0;
+to_BUS = 4'd8;
+to_REG = 5'd4;
+to_IM = 1'd0;
+to_DM = 1'd1;
+to_PC = 1'd0;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = FETCH1;
+end
+INC1: begin
+to_ALU = 3'd0;
+to_BUS = 4'd0;
+to_REG = 5'd6;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd1;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = INC2;
+end
+INC2: begin
+to_ALU = 3'd1;
+to_BUS = 4'd7;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b100;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = INC3;
+end
+INC3: begin
+to_ALU = 3'd0;
+to_BUS = 4'd12;
+to_REG = 5'd1;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = INC4;
+end
+INC4: begin
+to_ALU = 3'd0;
+to_BUS = 4'd0;
+to_REG = 5'd6;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd1;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = INC5;
+end
+INC5: begin
+to_ALU = 3'd2;
+to_BUS = 4'd0;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b100;
+En_Select = 1'd1;
+RW_Select = 1'd0;
+NS = INC6;
+end
+INC6: begin
+to_ALU = 3'd0;
+to_BUS = 4'd8;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b000;
+En_Select = 1'd1;
+RW_Select = 1'd1;
+NS = FETCH1;
+end
+INCAC1: begin
+to_ALU = 3'd0;
+to_BUS = 4'd0;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b001;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = FETCH1;
+end
+MOVE1: begin
+to_ALU = 3'd0;
+to_BUS = 4'd0;
+to_REG = 5'd6;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd1;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = MOVE2;
+end
+MOVE2: begin
+to_ALU = 3'd1;
+to_BUS = 4'd0;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b100;
+En_Select = 1'd1;
+RW_Select = 1'd0;
+NS = MOVE3;
+end
+MOVE3: begin
+to_ALU = 3'd0;
+to_BUS = 4'd12;
+to_REG = 5'd1;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = INC4;
+end
+MOVE4: begin
+to_ALU = 3'd0;
+to_BUS = 4'd0;
+to_REG = 5'd6;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd1;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = INC5;
+end
+MOVE5: begin
+to_ALU = 3'd0;
+to_BUS = 4'd8;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b000;
+En_Select = 1'd1;
+RW_Select = 1'd1;
+NS = FETCH1;
+end
+ADD: begin
+to_ALU = 3'd2;
+to_BUS = 4'd1;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b100;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = FETCH1;
+end
+SUB: begin
+to_ALU = 3'd3;
+to_BUS = 4'd1;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b100;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = FETCH1;
+end
+MUL: begin
+to_ALU = 3'd4;
+to_BUS = 4'd1;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b100;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = FETCH1;
+end
+AND: begin
+to_ALU = 3'd5;
+to_BUS = 4'd1;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b100;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = FETCH1;
+end
+OR: begin
+to_ALU = 3'd6;
+to_BUS = 4'd1;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b100;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = FETCH1;
+end
+JUMP: begin
+to_ALU = 3'd0;
+to_BUS = 4'd0;
+to_REG = 5'd6;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd1;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = JUMPY1;
+end
 endcase
 end
 endmodule
