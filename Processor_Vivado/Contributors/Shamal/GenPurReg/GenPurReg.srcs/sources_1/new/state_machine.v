@@ -5,21 +5,20 @@ module CU(
     input [0:0] j,
     input [0:0] k,
     input [7:0] instruction,
-    output reg[2:0] to_alu,
+    output reg[2:0] to_ALU,
     output reg[0:0] to_DM,
     output reg[0:0] to_IM,
-    output reg[3:0] to_REG,
+    output reg[4:0] to_REG,
     output reg[3:0] to_BUS,
-    output reg[3:0] to_PC,
+    output reg[0:0] to_PC,
     output reg[2:0] to_AC,
     output reg[0:0] En_Select,
     output reg[0:0] RW_Select,
     output reg finish
 //    input [1:0] status
 );
-reg [5:0] PS = 6'd0;
-reg [5:0] NS = 6'd0;
-
+    reg [5:0] PS = 8'd3;
+    reg [5:0] NS = 8'd0;
     parameter FETCH1 = 8'd0;
     parameter FETCH2 = 8'd1;
     parameter FETCH3 = 8'd2;
@@ -64,7 +63,9 @@ reg [5:0] NS = 6'd0;
     parameter AND = 8'd41;
     parameter OR = 8'd42;
 always @(posedge clk)
+begin
 PS <= NS;
+end
 always @(posedge clk)
 begin
 if (PS == END)
@@ -73,6 +74,7 @@ else
 finish <= 1'd0;
 end
 always @(PS or z or instruction)
+begin
 case(PS)
 NOP: begin
 NS = FETCH1;
@@ -80,9 +82,11 @@ end
 FETCH1: begin
 to_ALU = 3'd0;
 to_BUS = 4'd12;
-to_REG = 4'd1;
+to_REG = 5'd1;
 to_IM = 1'd0;
 to_DM = 1'd0;
+to_PC = 1'd1;
+to_AC = 3'd0;
 En_Select = 1'd0;
 RW_Select = 1'd0;
 NS = FETCH2;
@@ -90,18 +94,151 @@ end
 FETCH2: begin
 to_ALU = 3'd0;
 to_BUS = 4'd12;
-to_REG = 4'd1;
+to_REG = 5'd18; //6i 1i ekata kara
 to_IM = 1'd0;
 to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'd0;
 En_Select = 1'd0;
 RW_Select = 1'd0;
 NS = FETCH3;
 end
-FETCH2: begin
-NS = instruction[5:0];
+FETCH3: begin
+to_ALU = 3'd0;
+to_BUS = 4'd7;
+to_REG = 5'd3;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'd0;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = instruction[7:0];
 end
-LDAC1: begin
-NS = LDAC1X;
+END: begin
+NS = NOP;
+end
+CLR1: begin
+to_ALU = 3'd0;
+to_BUS = 4'd7;
+to_REG = 5'd5;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd1;
+to_AC = 3'd0;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = CLR2;
+end
+CLR2: begin
+to_ALU = 3'd0;
+to_BUS = 4'd0;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b001;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = CLR3;
+end
+CLR3: begin
+to_ALU = 3'd0;
+to_BUS = 4'd0;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd1;
+to_AC = 3'b000;
+En_Select = 1'd1;
+RW_Select = 1'd1;
+NS = FETCH1;
+end
+LOAD1: begin
+to_ALU = 3'd0;
+to_BUS = 4'd0;
+to_REG = 5'd5;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd1;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = LOAD2;
+end
+LOAD2: begin
+to_ALU = 3'd0;
+to_BUS = 4'd7;
+to_REG = 5'd1;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = LOAD3;
+end
+LOAD3: begin
+to_ALU = 3'd0;
+to_BUS = 4'd12;
+to_REG = 5'd19;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = LOAD4;
+end
+LOAD4: begin
+to_ALU = 3'd1;
+to_BUS = 4'd7;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b100;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = LOAD5;
+end
+LOAD5: begin
+to_ALU = 3'd0;
+to_BUS = 4'd0;
+to_REG = 5'd5;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd1;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = LOAD6;
+end
+LOAD6: begin
+to_ALU = 3'd0;
+to_BUS = 4'd8;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b000;
+En_Select = 1'd1;
+RW_Select = 1'd1;
+NS = FETCH1;
+end
+LOAD6: begin
+to_ALU = 3'd0;
+to_BUS = 4'd8;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b000;
+En_Select = 1'd1;
+RW_Select = 1'd1;
+NS = FETCH1;
 end
 
+endcase
+end
 endmodule

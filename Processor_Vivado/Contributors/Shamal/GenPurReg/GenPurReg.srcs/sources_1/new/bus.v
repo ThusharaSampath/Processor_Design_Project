@@ -14,7 +14,7 @@ module BUS(
     input [15:0] K,
     input [15:0] BASE,
     output reg [15:0] out ) ;
-always @(*)
+always @(posedge clk)
     begin
     case(r_en)
         4'd1: out = R;

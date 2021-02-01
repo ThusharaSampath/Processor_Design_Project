@@ -7,7 +7,7 @@ module Genaral_Purpose_Register
 
 
     
-     always @(posedge clk)
+     always @(negedge clk)
         begin
             if (write) data_out <= data_in;
         end

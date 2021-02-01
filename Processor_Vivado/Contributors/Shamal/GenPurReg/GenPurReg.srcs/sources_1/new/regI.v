@@ -14,7 +14,7 @@ module Reg_X
             else iflag = 1'd1;
             
         end
-     always @(posedge clk)
+     always @(negedge clk)
         begin
             if (write_i) data_out_i = data_in;
             if (write_iref) data_out_iref = data_in;

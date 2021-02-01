@@ -4,7 +4,7 @@ module midr
     output reg [15:0] data_out);
 
 
-     always @(posedge clk)
+     always @(negedge clk)
         begin
             if (write) data_out <= data_in;
         end
