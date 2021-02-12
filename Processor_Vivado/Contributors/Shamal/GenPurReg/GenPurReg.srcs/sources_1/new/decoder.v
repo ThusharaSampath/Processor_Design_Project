@@ -18,8 +18,8 @@ module decoder(
     output reg [0:0] out_K,
     output reg [0:0] out_K_Ref,
     output reg [0:0] out_P,
-    output reg [0:0] out_R,
-     ) ;
+    output reg [0:0] out_R
+    );
      reg reg_select;
 always @(*)
     begin
@@ -394,6 +394,26 @@ always @(*)
                 out_MDDR_BUS=0;
                 out_MDDR_IM=0; 
                 out_MDDR_DM=1; 
+                out_BASE=0;    
+                out_I=0;       
+                out_I_Ref=0;   
+                out_Base_A=0;  
+                out_J=0;       
+                out_J_Ref=0;   
+                out_Base_B=0;  
+                out_K=0;       
+                out_K_Ref=0;   
+                out_P=0;       
+                out_R=0;                    
+            end
+            default: 
+            begin
+                out_AR=0;      
+                out_PC=0;     
+                out_MIDR=0;    
+                out_MDDR_BUS=0;
+                out_MDDR_IM=0; 
+                out_MDDR_DM=0; 
                 out_BASE=0;    
                 out_I=0;       
                 out_I_Ref=0;   
