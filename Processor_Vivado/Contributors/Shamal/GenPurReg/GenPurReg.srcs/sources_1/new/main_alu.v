@@ -14,8 +14,9 @@ module main_alu ( input clk,
                             3'd2: {zflag,out}= bus_in + ac_in;
                             3'd3: {zflag,out}= ac_in - bus_in;
                             3'd4: {zflag,out}= ac_in * bus_in;
-                            3'd5: {zflag,out}= ac_in | bus_in;
-                            3'd6: {zflag,out}= ac_in & bus_in;
+                            3'd5: {zflag,out}= ac_in & bus_in;
+                            3'd6: {zflag,out}= ac_in | bus_in;
+                            
                             default:out= out;
                         endcase
                         if(out == 16'd0) zflag = 1'd1;

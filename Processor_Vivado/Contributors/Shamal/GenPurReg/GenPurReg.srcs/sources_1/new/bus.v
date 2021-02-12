@@ -1,6 +1,7 @@
 module BUS(
     input clk,
-    input [3:0] r_en,
+    input [4:0] from_selector,
+    input [4:0] from_cu,
     input [15:0] AR,
     input [15:0] PC,
     input [15:0] R,
@@ -13,22 +14,25 @@ module BUS(
     input [15:0] J,
     input [15:0] K,
     input [15:0] BASE,
-    output reg [15:0] out ) ;
+    output reg [15:0] out) ;
+    reg  reg_select;
 always @(posedge clk)
     begin
-    case(r_en)
-        4'd1: out = R;
-        4'd2: out = P;
-        4'd4: out = Mat_A;
-        4'd5: out = Mat_B;
-        4'd6: out = AR;
-        4'd7: out = MDDR;
-        4'd8: out = AC;
-        4'd9: out = I;
-        4'd10: out = J;
-        4'd11: out = K;
-        4'd11: out = BASE;
-        4'd12: out = PC;
+    if (from_selector==0)reg_select=from_cu;
+    else reg_select=from_selector;
+    case(reg_select)
+        5'd1: out = AR;
+        5'd2: out = PC;
+        5'd4: out = MDDR;
+        5'd7: out = BASE;
+        5'd8: out = I;
+        5'd11: out = J;
+        5'd14: out = K;
+        5'd16: out = P;
+        5'd17: out = R;
+        5'd20: out = AC;
+        5'd21: out = Mat_A;
+        5'd22: out = Mat_B;
         default: out= 16'd0;
     endcase
     end

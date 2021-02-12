@@ -4,9 +4,6 @@ module ac (
     input [15:0] data_inalu,
     output reg [15:0] data_out
    );
-
-    
-
     always @(*) 
         begin
             if (writealu) data_out = data_inalu;
