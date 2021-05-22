@@ -1,12 +1,13 @@
 module topProcessor(
     input clk,
-    input DM_out,
-    input IM_out,
-    output reg IM_in,
-    output reg DM_in,
-    output reg DM_en,
-    output reg IM_en,
-    output reg AR_out    
+    input [15:0]DM_out,//from data mem to proc(MDDR)
+    input [15:0]IM_out,
+    output reg [15:0]IM_in,
+    output reg [15:0]DM_in,//from processor(MDDR) to data mem (data)
+    output reg [0:0]DM_en,//from processor to data mem (control signal)
+    output reg [0:0]IM_en,
+    output reg [15:0]AR_out,  
+    output reg finish  
     );
    
     wire to_DM;
@@ -30,10 +31,14 @@ module topProcessor(
     wire [0:0] k_ref_wire;
     wire [2:0] opcode_wire;
     wire [2:0] ac_cu_wire;
-    wire [5:0] cu_decoder_wire;//select reg
-    wire [0:0] decoder_selector;//select read/write
-    wire [5:0] bus_selector_from_cu;
+    wire [5:0] cu_decoder_wire;//select reg by cu
+    wire [0:0] decoder_selector_from_register_selector;//select read/write by reg selector module
+    wire [5:0] bus_selector_from_cu; //
     wire [5:0] bus_selector_from_register_selector;
+    wire [0:0] en_register_selector;//form CU - enable 
+    wire [0:0] rw_register_selector;//from cu - read/wrie select 
+    wire [0:0] finish_wire;//from cu - read/wrie select 
+
     always@(*)
      begin
         IM_en <= to_IM;
@@ -41,6 +46,7 @@ module topProcessor(
         AR_out <= Mul_bus_wire[0];
         IM_in <= Mul_bus_wire[2];
         DM_in <= Mul_bus_wire[2];
+        finish <= finish_wire ;
      end
      
      Genaral_Purpose_Register AR (.clk(clk), .write(d_wire[0]), .data_in(bus_wire),.data_out(Mul_bus_wire[0]));
@@ -90,7 +96,7 @@ module topProcessor(
      decoder decoder (  
         .clk(clk),
         .from_cu(cu_decoder_wire),
-        .selector(decoder_selector),
+        .from_selector(decoder_selector_from_register_selector),
         .out_AR(d_wire[0]),
         .out_PC(d_wire[1]),
         .out_MIDR(d_wire[2]),
@@ -127,7 +133,31 @@ module topProcessor(
     .BASE(Mul_bus_wire[3]),
     .out(bus_wire)
     );
-    
-
+    CU cu(
+        .clk(clk),
+        .z(zflag_wire),
+        .i(iflag_wire),
+        .j(jflag_wire),
+        .k(kflag_wire),
+        .instruction(MIDR_wire),
+        .to_ALU(opcode_wire),
+        .to_DM(to_DM),
+        .to_IM(to_IM),
+        .to_REG(cu_decoder_wire),
+        .to_BUS(bus_selector_from_cu),
+        .to_PC(PC_inc_wire),
+        .to_AC(ac_cu_wire),
+        .En_Select(en_register_selector),
+        .RW_Select(rw_register_selector),
+        .finish(finish_wire)
+    );
+    regSelect register_selector(
+    .clk(clk),
+    .en(en_register_selector),
+    .rw(rw_register_selector),
+    .fromMDDR(Mul_bus_wire[2][7:0]),
+    .toDecoder(decoder_selector_from_register_selector),
+    .toBus(bus_selector_from_register_selector)
+    );
 
 endmodule

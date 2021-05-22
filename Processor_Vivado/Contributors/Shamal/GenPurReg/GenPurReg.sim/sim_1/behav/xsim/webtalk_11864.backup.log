@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Jan 31 19:31:57 2021
+# Process ID: 11864
+# Current directory: E:/Documents/University work/Extra/Proecessor_Design/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source E:/Documents/University work/Extra/Proecessor_Design/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.sim/sim_1/behav/xsim/xsim.dir/State_TB_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: E:/Documents/University work/Extra/Proecessor_Design/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: E:/Documents/University work/Extra/Proecessor_Design/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source E:/Documents/University -notrace
+couldn't read file "E:/Documents/University": no such file or directory
+INFO: [Common 17-206] Exiting Webtalk at Sun Jan 31 19:31:57 2021...

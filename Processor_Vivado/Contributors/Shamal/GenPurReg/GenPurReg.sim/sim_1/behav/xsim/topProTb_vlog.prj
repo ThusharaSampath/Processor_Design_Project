@@ -1,0 +1,21 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../GenPurReg.srcs/sources_1/new/AC.v" \
+"../../../../GenPurReg.srcs/sources_1/new/GenPR.v" \
+"../../../../GenPurReg.srcs/sources_1/new/Mat_X.v" \
+"../../../../GenPurReg.srcs/sources_1/new/PC.v" \
+"../../../../GenPurReg.srcs/sources_1/new/Reg_Selector.v" \
+"../../../../GenPurReg.srcs/sources_1/new/bus.v" \
+"../../../../GenPurReg.srcs/sources_1/new/decoder.v" \
+"../../../../GenPurReg.srcs/sources_1/new/main_alu.v" \
+"../../../../GenPurReg.srcs/sources_1/new/mddr.v" \
+"../../../../GenPurReg.srcs/sources_1/new/regI.v" \
+"../../../../GenPurReg.srcs/sources_1/new/state_machine.v" \
+"../../../../GenPurReg.srcs/sources_1/new/topProcessor.v" \
+"../../../../GenPurReg.srcs/sources_1/new/topProTb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
