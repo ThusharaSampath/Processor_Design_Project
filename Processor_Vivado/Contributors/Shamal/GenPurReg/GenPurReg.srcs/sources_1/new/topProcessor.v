@@ -30,8 +30,10 @@ module topProcessor(
     wire [0:0] k_ref_wire;
     wire [2:0] opcode_wire;
     wire [2:0] ac_cu_wire;
-    wire [5:0] cu_decoder_wire;
-    wire [0:0] decoder_selector;
+    wire [5:0] cu_decoder_wire;//select reg
+    wire [0:0] decoder_selector;//select read/write
+    wire [5:0] bus_selector_from_cu;
+    wire [5:0] bus_selector_from_register_selector;
     always@(*)
      begin
         IM_en <= to_IM;
@@ -107,5 +109,25 @@ module topProcessor(
         .out_P(d_wire[15]),
         .out_R(d_wire[16])
     );
-      
+    BUS bus(
+    .clk(clk),
+    .from_selector(bus_selector_from_register_selector),
+    .from_cu(bus_selector_from_cu),
+    .AR(Mul_bus_wire[0]),
+    .PC(Mul_bus_wire[1]),
+    .R(Mul_bus_wire[8]),
+    .P(Mul_bus_wire[7]),
+    .Mat_A(Mul_bus_wire[10]),
+    .Mat_B(Mul_bus_wire[11]),
+    .MDDR(Mul_bus_wire[2]),
+    .AC(Mul_bus_wire[9]),
+    .I(Mul_bus_wire[4]),
+    .J(Mul_bus_wire[5]),
+    .K(Mul_bus_wire[6]),
+    .BASE(Mul_bus_wire[3]),
+    .out(bus_wire)
+    );
+    
+
+
 endmodule
