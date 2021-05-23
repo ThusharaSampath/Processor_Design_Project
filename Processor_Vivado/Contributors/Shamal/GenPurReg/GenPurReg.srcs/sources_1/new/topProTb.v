@@ -22,10 +22,5 @@ module topProTb;
         begin
             IM_out=8'd8;DM_out=8'd5;
             #(clk_period);
-            #(clk_period);
-            #(clk_period);
-            #(clk_period);
-            #(clk_period);
-            #(clk_period);
         end
 endmodule
