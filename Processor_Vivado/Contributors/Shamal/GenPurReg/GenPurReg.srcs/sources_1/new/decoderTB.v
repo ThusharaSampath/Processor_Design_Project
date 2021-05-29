@@ -63,7 +63,7 @@ out_R
             #(clk_period);
             from_cu=5'd3 ; from_selector=5'd0;
             #(clk_period);
-            from_cu=5'd3 ; from_selector=5'd18;
+            from_cu=5'd3 ; from_selector=5'd6;
             #(clk_period);
         end
 endmodule

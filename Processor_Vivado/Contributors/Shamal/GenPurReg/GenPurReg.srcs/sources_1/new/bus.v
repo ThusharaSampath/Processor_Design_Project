@@ -15,10 +15,10 @@ module BUS(
     input [15:0] K,
     input [15:0] BASE,
     output reg [15:0] out) ;
-    reg  reg_select;
+    reg [4:0] reg_select;
 always @(posedge clk)
     begin
-    if (from_selector==0)reg_select=from_cu;
+    if (from_selector==5'd0)reg_select=from_cu;
     else reg_select=from_selector;
     case(reg_select)
         5'd1: out = AR;

@@ -20,7 +20,7 @@ module decoder(
     output reg [0:0] out_P,
     output reg [0:0] out_R
     );
-     reg reg_select;
+     reg [5:0] reg_select;
 always @(*)
     begin
     if (from_selector==5'd0)reg_select=from_cu;

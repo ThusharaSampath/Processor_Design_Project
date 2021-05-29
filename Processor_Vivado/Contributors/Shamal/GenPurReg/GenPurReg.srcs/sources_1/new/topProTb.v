@@ -5,10 +5,11 @@ module topProTb;
     reg [15:0]DM_out;
     reg [15:0]IM_out;
     wire  [15:0]IM_in,DM_in,AR_out;
+    wire test;
     wire  DM_en,IM_en,finish;
     parameter clk_period = 10;
 
-    topProcessor topProcessor(clk,DM_out,IM_out,IM_in,DM_in,DM_en,IM_en,AR_out,finish);
+    topProcessor topProcessor(clk,DM_out,IM_out,IM_in,DM_in,DM_en,IM_en,AR_out,finish,test);
 
     initial 
     begin
