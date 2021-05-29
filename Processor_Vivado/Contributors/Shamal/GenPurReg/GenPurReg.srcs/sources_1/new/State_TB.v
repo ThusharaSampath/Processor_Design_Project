@@ -31,7 +31,7 @@ module State_TB;
     
     initial
         begin
-            z=1'b0;i=1'b0;j=1'b0;k=1'b0;instruction=8'd8;
+//            z=1'b0;i=1'b0;j=1'b0;k=1'b0;instruction=8'd0;
             #(clk_period);
             #(clk_period);
             #(clk_period);

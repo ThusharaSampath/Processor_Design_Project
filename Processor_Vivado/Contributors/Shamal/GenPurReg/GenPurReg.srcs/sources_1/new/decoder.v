@@ -23,7 +23,7 @@ module decoder(
      reg reg_select;
 always @(*)
     begin
-    if (from_selector==0)reg_select=from_cu;
+    if (from_selector==5'd0)reg_select=from_cu;
     else reg_select=from_selector;
     case (reg_select)
             5'd0:begin

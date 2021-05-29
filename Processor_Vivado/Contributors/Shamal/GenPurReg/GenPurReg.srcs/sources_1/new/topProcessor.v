@@ -1,7 +1,7 @@
 module topProcessor(
     input clk,
-    input [15:0]DM_out,//from data mem to proc(MDDR)
-    input [15:0]IM_out,
+    input  [15:0]DM_out,//from data mem to proc(MDDR)
+    input  [15:0]IM_out,
     output reg [15:0]IM_in,
     output reg [15:0]DM_in,//from processor(MDDR) to data mem (data)
     output reg [0:0]DM_en,//from processor to data mem (control signal)
@@ -39,8 +39,12 @@ module topProcessor(
     wire [0:0] rw_register_selector;//from cu - read/wrie select 
     wire [0:0] finish_wire;//from cu - read/wrie select 
 
+    assign data_IM = IM_out;
+    assign data_DM = DM_out;
+        
     always@(*)
      begin
+        
         IM_en <= to_IM;
         DM_en <= to_DM;
         AR_out <= Mul_bus_wire[0];
