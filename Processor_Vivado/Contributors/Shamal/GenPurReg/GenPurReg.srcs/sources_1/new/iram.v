@@ -7,13 +7,13 @@ module IRAM(
     );
     reg [15:0] MEM [65535:0];
     parameter FETCH = 8'd0;
-    parameter NOP = 8'd1;
-    parameter END = 8'd2;
-    parameter CLR = 8'd3;
-    parameter LOAD = 8'd4;
-    parameter LOADM = 8'd5;
-    parameter STAC = 8'd6;
-    parameter INC1 = 8'd7;
+    parameter NOP = 8'd3;
+    parameter END = 8'd4;
+    parameter CLR = 8'd5;
+    parameter LOAD = 8'd8;
+    parameter LOADM = 8'd14;
+    parameter STAC = 8'd18;
+    parameter INC = 8'd21;
     parameter INCAC = 8'd27;
     parameter JUMP = 8'd28;
     parameter MOVE = 8'd33;
@@ -27,10 +27,11 @@ module IRAM(
     initial begin
         MEM[0]=LOAD;
     end
-always @(*) begin
+always @(posedge clk) begin
 if (write == 1)
 MEM[address] <= instr_in[7:0];
-else
+
 instr_out <= MEM[address];
 end
+
 endmodule
