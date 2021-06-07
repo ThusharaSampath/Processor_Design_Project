@@ -25,6 +25,7 @@ module IRAM(
    
     
     initial begin
+        MEM[0]=LOAD;
     end
 always @(*) begin
 if (write == 1)

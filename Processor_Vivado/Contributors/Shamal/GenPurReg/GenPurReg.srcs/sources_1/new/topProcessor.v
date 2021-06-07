@@ -8,12 +8,15 @@ module topProcessor(
     output reg [0:0]IM_en,
     output reg [15:0]AR_out,  
     output reg finish,  
-    output reg test
+    output reg [15:0]test,
+    output reg [5:0]test2,
+    output reg [4:0]test3
+    
     );
    
     wire to_DM;
     wire to_IM;
-    wire  d_wire [16:0];
+    wire [0:0]d_wire [16:0];
     wire [15:0] bus_wire;
     wire [15:0] MIDR_wire;
     wire [15:0] data_IM;
@@ -33,7 +36,7 @@ module topProcessor(
     wire [2:0] opcode_wire;
     wire [2:0] ac_cu_wire;
     wire [5:0] cu_decoder_wire;//select reg by cu
-    wire [0:0] decoder_selector_from_register_selector;//select read/write by reg selector module
+    wire [5:0] decoder_selector_from_register_selector;//select read/write by reg selector module
     wire [4:0] bus_selector_from_cu; //
     wire [4:0] bus_selector_from_register_selector;
     wire [0:0] en_register_selector;//form CU - enable 
@@ -45,7 +48,9 @@ module topProcessor(
         
     always@(*)
      begin
-        test <= d_wire[3] ;
+        test <= bus_wire;
+        test2 <= cu_decoder_wire;
+        test3 <= bus_selector_from_cu;
         IM_en <= to_IM;
         DM_en <= to_DM;
         AR_out <= Mul_bus_wire[0];

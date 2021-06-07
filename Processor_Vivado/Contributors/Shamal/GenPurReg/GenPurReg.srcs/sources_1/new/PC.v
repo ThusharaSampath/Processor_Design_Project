@@ -1,7 +1,7 @@
 module PC
     (input clk,write,incpc,
     input [15:0] data_in,
-    output reg [15:0] data_out
+    output reg [15:0] data_out = 16'd0
     );
        
 

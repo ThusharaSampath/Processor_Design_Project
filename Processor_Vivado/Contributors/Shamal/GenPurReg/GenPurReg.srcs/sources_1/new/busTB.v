@@ -3,24 +3,40 @@
 
 module busTB;
 
-    input clk,
-    input [4:0] from_selector,
-    input [4:0] from_cu,
-    input [15:0] AR,
-    input [15:0] PC,
-    input [15:0] R,
-    input [15:0] P,
-    input [15:0] Mat_A,
-    input [15:0] Mat_B,
-    input [15:0] MDDR,
-    input [15:0] AC,
-    input [15:0] I,
-    input [15:0] J,
-    input [15:0] K,
-    input [15:0] BASE,
-    output reg [15:0] out) ;
+    reg clk;
+    reg [4:0] from_selector;
+    reg [4:0] from_cu;
+    reg [15:0] AR;
+    reg [15:0] PC;
+    reg [15:0] R;
+    reg [15:0] P;
+    reg [15:0] Mat_A;
+    reg [15:0] Mat_B;
+    reg [15:0] MDDR;
+    reg [15:0] AC;
+    reg [15:0] I;
+    reg [15:0] J;
+    reg [15:0] K;
+    reg [15:0] BASE;
+    wire  [15:0] out;
+    parameter clk_period = 10;
 
-    topProcessor topProcessor(clk,DM_out,IM_out,IM_in,DM_in,DM_en,IM_en,AR_out,finish,test);
+    BUS bus(clk,
+    from_selector,
+from_cu,
+AR,
+PC,
+R,
+P,
+Mat_A,
+Mat_B,
+MDDR,
+AC,
+I,
+J,
+K,
+BASE,
+out);
 
     initial 
     begin
@@ -32,7 +48,7 @@ module busTB;
         clk = ~clk;
     initial
         begin
-            IM_out=8'd8;DM_out=8'd5;
+            from_selector=5'd0;from_cu=5'd2;PC=16'd9;
             #(clk_period);
         end
 endmodule

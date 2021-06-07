@@ -15,7 +15,7 @@ module State_TB;
     wire [0:0] En_Select;
     wire [0:0] RW_Select;
     wire finish;
-    parameter clk_period = 10;
+    
        
     CU statem (clk,z,i,j,k,instruction,to_ALU,to_DM,to_IM,to_REG,to_BUS,to_PC,
     to_AC,En_Select,RW_Select,finish);

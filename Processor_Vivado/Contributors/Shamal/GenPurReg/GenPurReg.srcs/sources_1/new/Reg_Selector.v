@@ -3,8 +3,8 @@ module regSelect(
     input en,
     input rw,
     input [7:0] fromMDDR,
-    output reg [5:0] toDecoder,
-    output reg [4:0] toBus
+    output reg [5:0] toDecoder = 6'd0,
+    output reg [4:0] toBus = 4'd0
 
    );
 always @(*)

@@ -57,9 +57,9 @@ out_R
     
     initial
         begin
-            from_cu=5'd0 ; from_selector=5'd0;
+            from_cu=5'd1 ; from_selector=5'd0;
             #(clk_period);
-            from_cu=5'd2 ; from_selector=5'd0;
+            from_cu=5'd18 ; from_selector=5'd0;
             #(clk_period);
             from_cu=5'd3 ; from_selector=5'd0;
             #(clk_period);
