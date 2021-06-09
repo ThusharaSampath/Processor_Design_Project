@@ -5,6 +5,13 @@ module dram(
     input [15:0] data_in,
     output reg [15:0] data_out );
     reg [15:0] MEM [65535:0];
+
+    initial begin
+        MEM[0]=16'd2;
+        MEM[1]=16'd3;
+    end
+
+
         always @(posedge clk)
             begin
                 if (write == 1)

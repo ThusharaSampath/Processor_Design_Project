@@ -10,10 +10,11 @@ module topProcessor(
     output reg finish,  
     output reg [15:0]test,
     output reg [5:0]test2,
-    output reg [4:0]test3
+    output reg [15:0]test3,
+    output reg [7:0]current_micro_instruction
     
     );
-   
+    wire [7:0]current_micro_instruction_wire;
     wire to_DM;
     wire to_IM;
     wire [0:0]d_wire [16:0];
@@ -48,9 +49,11 @@ module topProcessor(
         
     always@(*)
      begin
+        current_micro_instruction <= current_micro_instruction_wire;
         test <= bus_wire;
         test2 <= cu_decoder_wire;
-        test3 <= bus_selector_from_cu;
+//        test3 <= bus_selector_from_cu;
+        test3 <= alu_out;
         IM_en <= to_IM;
         DM_en <= to_DM;
         AR_out <= Mul_bus_wire[0];
@@ -100,7 +103,7 @@ module topProcessor(
      main_alu ALU (.clk(clk), .bus_in(bus_wire), .ac_in(Mul_bus_wire[9]),
       .op_code(opcode_wire),.out(alu_out), .zflag(zflag_wire));
      
-     ac AC (.clk(clk), .writealu(ac_cu_wire[0]), .rstac(ac_cu_wire[1]), .incac(ac_cu_wire[2]), 
+     ac AC (.clk(clk), .writealu_rstac_incac(ac_cu_wire), 
      .data_inalu(alu_out), .data_out(Mul_bus_wire[9]));
      
      decoder decoder (  
@@ -159,13 +162,14 @@ module topProcessor(
         .to_AC(ac_cu_wire),
         .En_Select(en_register_selector),
         .RW_Select(rw_register_selector),
-        .finish(finish_wire)
+        .finish(finish_wire),
+        .current_micro_instruction(current_micro_instruction_wire)
     );
     regSelect register_selector(
     .clk(clk),
     .en(en_register_selector),
     .rw(rw_register_selector),
-    .fromMDDR(Mul_bus_wire[2][7:0]),
+    .fromMDDR(Mul_bus_wire[2]),
     .toDecoder(decoder_selector_from_register_selector),
     .toBus(bus_selector_from_register_selector)
     );

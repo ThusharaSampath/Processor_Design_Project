@@ -5,24 +5,26 @@ module Processor(
 input clk,
     output reg [15:0]test,
     output reg [5:0]test2,
-    output reg [4:0]test3
+    output reg [15:0]test3,
+    output reg [7:0]current_micro_instruction
     );
+    wire [7:0]current_micro_instruction_wire;
     wire [0:0]en_from_cpu_to_IM;
-wire [0:0]en_from_cpu_to_DM;
-wire [15:0]data_from_cpu_to_IM;
-wire [15:0]data_from_cpu_to_DM;
-wire [15:0]data_from_IM_to_cpu;
-wire [15:0]data_from_DM_to_cpu;
-wire [15:0]data_from_AR_to_M;
-wire [15:0]test_wire;
-wire [5:0]test2_wire;
-wire [4:0]test3_wire;
-wire [0:0]finish;
+    wire [0:0]en_from_cpu_to_DM;
+    wire [15:0]data_from_cpu_to_IM;
+    wire [15:0]data_from_cpu_to_DM;
+    wire [15:0]data_from_IM_to_cpu;
+    wire [15:0]data_from_DM_to_cpu;
+    wire [15:0]data_from_AR_to_M;
+    wire [15:0]test_wire;
+    wire [5:0]test2_wire;
+    wire [4:0]test3_wire;
+    wire [0:0]finish;
 
     always @(*) 
     begin
         //please work!
-
+        current_micro_instruction<=current_micro_instruction_wire;
         test <= test_wire;
         test2 <= test2_wire;
         test3 <= test3_wire;
@@ -41,7 +43,8 @@ wire [0:0]finish;
         .finish(finish),
         .test(test_wire),
         .test2(test2_wire),
-        .test3(test3_wire)
+        .test3(test3_wire),
+        .current_micro_instruction(current_micro_instruction_wire)
         );
     IRAM IRAM(
         .clk(clk),

@@ -15,7 +15,8 @@ module CU(
     output reg[2:0] to_AC,
     output reg[0:0] En_Select,
     output reg[0:0] RW_Select,
-    output reg finish
+    output reg finish,
+    output reg [7:0]current_micro_instruction
 //    input [1:0] status
 );
     reg [5:0] PS = 8'd3;
@@ -66,6 +67,7 @@ module CU(
 always @(posedge clk)
 begin
 PS <= NS;
+current_micro_instruction<=NS;
 end
 always @(posedge clk)
 begin

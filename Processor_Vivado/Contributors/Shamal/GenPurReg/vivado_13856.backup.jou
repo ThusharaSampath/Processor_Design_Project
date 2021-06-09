@@ -1,0 +1,152 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Jun  7 10:49:13 2021
+# Process ID: 13856
+# Current directory: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8704 E:\Acedemic\sem 5\Processor_Design_Project\Processor_Vivado\Contributors\Shamal\GenPurReg\GenPurReg.xpr
+# Log file: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/vivado.log
+# Journal file: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.xpr}
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top busTB [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top busTB [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+launch_simulation
+launch_simulation
+source busTB.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top topProTb [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top topProTb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+launch_simulation
+launch_simulation
+launch_simulation
+close_sim
+launch_simulation
+source topProTb.tcl
+close_sim
+launch_simulation
+source topProTb.tcl
+close_sim
+launch_simulation
+source topProTb.tcl
+close_sim
+launch_simulation
+source topProTb.tcl
+close_sim
+launch_simulation
+source topProTb.tcl
+close_sim
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+source topProTb.tcl
+close_sim
+launch_simulation
+source topProTb.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top decoderTB [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top decoderTB [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+close_sim
+launch_simulation
+source decoderTB.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top topProTb [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top topProTb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+launch_simulation
+close_sim
+launch_simulation
+source topProTb.tcl
+close_sim
+launch_simulation
+source topProTb.tcl
+close_sim
+launch_simulation
+source topProTb.tcl
+close_sim
+launch_simulation
+source topProTb.tcl
+close_sim
+launch_simulation
+source topProTb.tcl
+close_sim
+launch_simulation
+source topProTb.tcl
+close_sim
+launch_simulation
+source topProTb.tcl
+close_sim
+launch_simulation
+source topProTb.tcl
+close_sim
+launch_simulation
+source topProTb.tcl
+close_sim
+close [ open {E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.srcs/sources_1/new/Processor.v} w ]
+add_files {{E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.srcs/sources_1/new/Processor.v}}
+update_compile_order -fileset sources_1
+close [ open {E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.srcs/sources_1/new/ProcessorTB.v} w ]
+add_files {{E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.srcs/sources_1/new/ProcessorTB.v}}
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top ProcessorTB [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top ProcessorTB [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+launch_simulation
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl

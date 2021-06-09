@@ -1,8 +1,8 @@
 module regSelect(
     input clk,
-    input en,
-    input rw,
-    input [7:0] fromMDDR,
+    input [0:0]en,
+    input [0:0]rw,
+    input [15:0] fromMDDR,
     output reg [5:0] toDecoder = 6'd0,
     output reg [4:0] toBus = 4'd0
 

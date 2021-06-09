@@ -9,15 +9,15 @@ module main_alu ( input clk,
                   always @(negedge clk)
                     begin
                         case (op_code)
-                            3'd0: out= out;
-                            3'd1: {zflag,out}= bus_in;
-                            3'd2: {zflag,out}= bus_in + ac_in;
-                            3'd3: {zflag,out}= ac_in - bus_in;
-                            3'd4: {zflag,out}= ac_in * bus_in;
-                            3'd5: {zflag,out}= ac_in & bus_in;
-                            3'd6: {zflag,out}= ac_in | bus_in;
+//                            3'd0: out= out;
+//                            3'd1: {zflag,out}= bus_in;
+//                            3'd2: {zflag,out}= bus_in + ac_in;
+//                            3'd3: {zflag,out}= ac_in - bus_in;
+//                            3'd4: {zflag,out}= ac_in * bus_in;
+//                            3'd5: {zflag,out}= ac_in & bus_in;
+//                            3'd6: {zflag,out}= ac_in | bus_in;
                             
-                            default:out= out;
+                            default:out= 16'd100;
                         endcase
                         if(out == 16'd0) zflag = 1'd1;
                         
