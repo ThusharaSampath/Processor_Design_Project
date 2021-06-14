@@ -9,6 +9,7 @@ module dram(
     initial begin
         MEM[0]=16'd2;
         MEM[1]=16'd3;
+       
     end
 
 

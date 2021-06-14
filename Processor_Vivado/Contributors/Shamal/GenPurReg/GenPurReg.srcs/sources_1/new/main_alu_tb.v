@@ -38,8 +38,6 @@ module main_alu_tb;
             #(clk_period);
             op_code = 3'd5;
             
-            
-        
-        
+               
         end
 endmodule

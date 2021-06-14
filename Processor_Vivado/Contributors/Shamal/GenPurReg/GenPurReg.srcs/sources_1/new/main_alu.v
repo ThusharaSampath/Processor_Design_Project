@@ -1,26 +1,28 @@
 module main_alu ( input clk,
                   input [15:0] bus_in,
                   input [15:0] ac_in,
-                  input [3:0] op_code,
+                  input [2:0] op_code,
                   output reg [15:0] out,
                   output reg [0:0] zflag =1'd0
                   );
                   
                   always @(negedge clk)
                     begin
-                        case (op_code)
-//                            3'd0: out= out;
-//                            3'd1: {zflag,out}= bus_in;
-//                            3'd2: {zflag,out}= bus_in + ac_in;
-//                            3'd3: {zflag,out}= ac_in - bus_in;
-//                            3'd4: {zflag,out}= ac_in * bus_in;
-//                            3'd5: {zflag,out}= ac_in & bus_in;
-//                            3'd6: {zflag,out}= ac_in | bus_in;
+                         case (op_code)
+                            3'b000: out= out;
+                            3'b001: out= bus_in;
+                            3'b010: out= bus_in + ac_in;
+                            3'b011: out= ac_in - bus_in;
+                            3'b100: out= ac_in * bus_in;
+                            3'b101: out= ac_in & bus_in;
+                            3'b110: out= ac_in | bus_in;
                             
-                            default:out= 16'd100;
-                        endcase
-                        if(out == 16'd0) zflag = 1'd1;
+                            default:out = 0;
+                         endcase
+//                        out= 16'd56;
+                         if(out == 16'd0) zflag = 1'd1;
+
+                        //  out = op_code;
                         
                     end
 endmodule
-                  
