@@ -208,7 +208,7 @@ end
 LOAD5: begin
 to_ALU = 3'd0;
 to_BUS = 5'd0;
-to_REG = 5'd5;
+to_REG = 5'd6;
 to_IM = 1'd0;
 to_DM = 1'd0;
 to_PC = 1'd1;
@@ -216,18 +216,6 @@ to_AC = 3'b000;
 En_Select = 1'd0;
 RW_Select = 1'd0;
 NS = LOAD6;
-end
-LOAD6: begin
-to_ALU = 3'd0;
-to_BUS = 5'd20;
-to_REG = 5'd0;
-to_IM = 1'd0;
-to_DM = 1'd0;
-to_PC = 1'd0;
-to_AC = 3'b000;
-En_Select = 1'd1;
-RW_Select = 1'd1;
-NS = FETCH1;
 end
 LOAD6: begin
 to_ALU = 3'd0;

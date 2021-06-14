@@ -2,7 +2,7 @@
 module ProcessorTB;
     reg clk;
     wire [15:0]test;
-    wire [2:0]test2;
+    wire [15:0]test2;
     wire [15:0] test3;
     wire [7:0]current_micro_instruction;
     parameter clk_period = 10;

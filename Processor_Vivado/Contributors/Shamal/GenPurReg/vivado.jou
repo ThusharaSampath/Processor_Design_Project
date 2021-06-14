@@ -2,13 +2,63 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Wed Jun  9 14:07:04 2021
-# Process ID: 32968
-# Current directory: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent33564 E:\Acedemic\sem 5\Processor_Design_Project\Processor_Vivado\Contributors\Shamal\GenPurReg\GenPurReg.xpr
-# Log file: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/vivado.log
-# Journal file: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg\vivado.jou
+# Start of session at: Mon Jun 14 17:59:53 2021
+# Process ID: 6884
+# Current directory: G:/Github/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5712 G:\Github\Processor_Design_Project\Processor_Vivado\Contributors\Shamal\GenPurReg\GenPurReg.xpr
+# Log file: G:/Github/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/vivado.log
+# Journal file: G:/Github/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project {E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.xpr}
+open_project G:/Github/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.xpr
 update_compile_order -fileset sources_1
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl

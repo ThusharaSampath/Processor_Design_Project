@@ -9,7 +9,7 @@ module topProcessor(
     output reg [15:0]AR_out,  
     output reg finish,  
     output reg [15:0]test,
-    output reg [2:0]test2,
+    output reg [15:0]test2,
     output reg [15:0]test3,
     output reg [7:0]current_micro_instruction
     
@@ -50,10 +50,11 @@ module topProcessor(
     always@(*)
      begin
         current_micro_instruction <= current_micro_instruction_wire;
-        test <= bus_wire;
-        test2 <= opcode_wire;
+        // test <= bus_wire;
+        test <= Mul_bus_wire[8];
+        test2 <= Mul_bus_wire[2];
 //        test3 <= bus_selector_from_cu;
-        test3 <= Mul_bus_wire[9];
+        test3 <= Mul_bus_wire[0];
         IM_en <= to_IM;
         DM_en <= to_DM;
         AR_out <= Mul_bus_wire[0];

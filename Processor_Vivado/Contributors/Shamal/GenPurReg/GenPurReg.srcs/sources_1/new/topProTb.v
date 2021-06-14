@@ -6,7 +6,7 @@ module topProTb;
     reg [15:0]IM_out;
     wire  [15:0]IM_in,DM_in,AR_out;
     wire [15:0]test;
-    wire [5:0]test2;
+    wire [15:0]test2;
     wire [4:0] test3;
     wire  DM_en,IM_en,finish;
     parameter clk_period = 10;

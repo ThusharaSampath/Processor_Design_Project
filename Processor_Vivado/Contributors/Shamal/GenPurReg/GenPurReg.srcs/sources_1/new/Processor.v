@@ -4,7 +4,7 @@ module Processor(
 
 input clk,
     output reg [15:0]test,
-    output reg [2:0]test2,
+    output reg [15:0]test2,
     output reg [15:0]test3,
     output reg [7:0]current_micro_instruction
     );
@@ -17,7 +17,7 @@ input clk,
     wire [15:0]data_from_DM_to_cpu;
     wire [15:0]data_from_AR_to_M;
     wire [15:0]test_wire;
-    wire [2:0]test2_wire;
+    wire [15:0]test2_wire;
     wire [15:0]test3_wire;
     wire [0:0]finish;
 
