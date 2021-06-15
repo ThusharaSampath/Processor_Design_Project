@@ -7,8 +7,8 @@ module dram(
     reg [15:0] MEM [65535:0];
 
     initial begin
-        MEM[0]=16'd32;
-        MEM[1]=16'd3;
+        MEM[0]=16'd3;
+        MEM[1]=16'd5;
       
        
     end

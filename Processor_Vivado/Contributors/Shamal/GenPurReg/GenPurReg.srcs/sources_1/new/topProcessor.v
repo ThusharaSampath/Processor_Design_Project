@@ -34,7 +34,7 @@ module topProcessor(
     wire [0:0] i_ref_wire;
     wire [0:0] j_ref_wire;
     wire [0:0] k_ref_wire;
-    wire [2:0] opcode_wire;
+    wire [3:0] opcode_wire;
     wire [2:0] ac_cu_wire;
     wire [5:0] cu_decoder_wire;//select reg by cu
     wire [5:0] decoder_selector_from_register_selector;//select read/write by reg selector module
@@ -54,7 +54,7 @@ module topProcessor(
         test <= Mul_bus_wire[8];
         test2 <= Mul_bus_wire[2];
 //        test3 <= bus_selector_from_cu;
-        test3 <= Mul_bus_wire[0];
+        test3 <= Mul_bus_wire[9];
         IM_en <= to_IM;
         DM_en <= to_DM;
         AR_out <= Mul_bus_wire[0];

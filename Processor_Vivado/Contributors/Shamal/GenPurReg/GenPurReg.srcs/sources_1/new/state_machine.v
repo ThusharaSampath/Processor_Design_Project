@@ -6,7 +6,7 @@ module CU(
     input [0:0] j,
     input [0:0] k,
     input [7:0] instruction,
-    output reg[2:0] to_ALU,
+    output reg[3:0] to_ALU,
     output reg[0:0] to_DM,
     output reg[0:0] to_IM,
     output reg[5:0] to_REG,
@@ -83,7 +83,7 @@ NOP: begin
 NS = FETCH1;
 end
 FETCH1: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd2;
 to_REG = 5'd1;
 to_IM = 1'd0;
@@ -95,7 +95,7 @@ RW_Select = 1'd0;
 NS = FETCH2;
 end
 FETCH2: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd2;
 to_REG = 5'd18; //6i 1i ekata kara
 to_IM = 1'd0;
@@ -107,7 +107,7 @@ RW_Select = 1'd0;
 NS = FETCH3;
 end
 FETCH3: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd4;
 to_REG = 5'd3;
 to_IM = 1'd0;
@@ -122,7 +122,7 @@ END: begin
 NS = NOP;
 end
 CLR1: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd4;
 to_REG = 5'd6;
 to_IM = 1'd0;
@@ -134,19 +134,19 @@ RW_Select = 1'd0;
 NS = CLR2;
 end
 CLR2: begin
-to_ALU = 3'd0;
+to_ALU = 4'd8;
 to_BUS = 5'd0;
 to_REG = 5'd0;
 to_IM = 1'd0;
 to_DM = 1'd0;
 to_PC = 1'd0;
-to_AC = 3'b001;
+to_AC = 3'b000;
 En_Select = 1'd0;
 RW_Select = 1'd0;
 NS = CLR3;
 end
 CLR3: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd0;
 to_REG = 5'd0;
 to_IM = 1'd0;
@@ -158,7 +158,7 @@ RW_Select = 1'd1;
 NS = FETCH1;
 end
 LOAD1: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd0;
 to_REG = 5'd6;
 to_IM = 1'd0;
@@ -170,7 +170,7 @@ RW_Select = 1'd0;
 NS = LOAD2;
 end
 LOAD2: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd4;
 to_REG = 5'd1;
 to_IM = 1'd0;
@@ -182,7 +182,7 @@ RW_Select = 1'd0;
 NS = LOAD3;
 end
 LOAD3: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd2;
 to_REG = 5'd19;
 to_IM = 1'd0;
@@ -194,7 +194,7 @@ RW_Select = 1'd0;
 NS = LOAD4;
 end
 LOAD4: begin
-to_ALU = 3'd1;
+to_ALU = 4'd1;
 to_BUS = 5'd4;
 to_REG = 5'd0;
 to_IM = 1'd0;
@@ -206,7 +206,7 @@ RW_Select = 1'd0;
 NS = LOAD5;
 end
 LOAD5: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd0;
 to_REG = 5'd6;
 to_IM = 1'd0;
@@ -218,7 +218,7 @@ RW_Select = 1'd0;
 NS = LOAD6;
 end
 LOAD6: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd20;
 to_REG = 5'd0;
 to_IM = 1'd0;
@@ -230,7 +230,7 @@ RW_Select = 1'd1;
 NS = FETCH1;
 end
 LOADM1: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd0;
 to_REG = 5'd6;
 to_IM = 1'd0;
@@ -242,7 +242,7 @@ RW_Select = 1'd0;
 NS = LOADM2;
 end
 LOADM2: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd0;
 to_REG = 5'd1;
 to_IM = 1'd0;
@@ -254,7 +254,7 @@ RW_Select = 1'd0;
 NS = LOADM3;
 end
 LOADM3: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd0;
 to_REG = 5'd5;
 to_IM = 1'd0;
@@ -266,7 +266,7 @@ RW_Select = 1'd0;
 NS = LOADM4;
 end
 LOADM4: begin
-to_ALU = 3'd1;
+to_ALU = 4'd1;
 to_BUS = 5'd4;
 to_REG = 5'd0;
 to_IM = 1'd0;
@@ -278,7 +278,7 @@ RW_Select = 1'd0;
 NS = FETCH1;
 end
 STAC1: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd0;
 to_REG = 5'd6;
 to_IM = 1'd0;
@@ -290,7 +290,7 @@ RW_Select = 1'd0;
 NS = STAC2;
 end
 STAC2: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd4;
 to_REG = 5'd1;
 to_IM = 1'd0;
@@ -302,7 +302,7 @@ RW_Select = 1'd0;
 NS = STAC3;
 end
 STAC3: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd20;
 to_REG = 5'd4;
 to_IM = 1'd0;
@@ -314,7 +314,7 @@ RW_Select = 1'd0;
 NS = FETCH1;
 end
 INC1: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd0;
 to_REG = 5'd6;
 to_IM = 1'd0;
@@ -326,7 +326,7 @@ RW_Select = 1'd0;
 NS = INC2;
 end
 INC2: begin
-to_ALU = 3'd1;
+to_ALU = 4'd1;
 to_BUS = 5'd4;
 to_REG = 5'd0;
 to_IM = 1'd0;
@@ -338,7 +338,7 @@ RW_Select = 1'd0;
 NS = INC3;
 end
 INC3: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd2;
 to_REG = 5'd1;
 to_IM = 1'd0;
@@ -350,7 +350,7 @@ RW_Select = 1'd0;
 NS = INC4;
 end
 INC4: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd0;
 to_REG = 5'd6;
 to_IM = 1'd0;
@@ -362,7 +362,7 @@ RW_Select = 1'd0;
 NS = INC5;
 end
 INC5: begin
-to_ALU = 3'd2;
+to_ALU = 4'd2;
 to_BUS = 5'd0;
 to_REG = 5'd0;
 to_IM = 1'd0;
@@ -374,7 +374,7 @@ RW_Select = 1'd0;
 NS = INC6;
 end
 INC6: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd20;
 to_REG = 5'd0;
 to_IM = 1'd0;
@@ -386,19 +386,19 @@ RW_Select = 1'd1;
 NS = FETCH1;
 end
 INCAC1: begin
-to_ALU = 3'd0;
+to_ALU = 4'd7;
 to_BUS = 5'd0;
 to_REG = 5'd0;
 to_IM = 1'd0;
 to_DM = 1'd0;
 to_PC = 1'd0;
-to_AC = 3'b001;
+to_AC = 3'b100;
 En_Select = 1'd0;
 RW_Select = 1'd0;
 NS = FETCH1;
 end
 MOVE1: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd0;
 to_REG = 5'd6;
 to_IM = 1'd0;
@@ -410,7 +410,7 @@ RW_Select = 1'd0;
 NS = MOVE2;
 end
 MOVE2: begin
-to_ALU = 3'd1;
+to_ALU = 4'd1;
 to_BUS = 5'd0;
 to_REG = 5'd0;
 to_IM = 1'd0;
@@ -422,7 +422,7 @@ RW_Select = 1'd0;
 NS = MOVE3;
 end
 MOVE3: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd2;
 to_REG = 5'd1;
 to_IM = 1'd0;
@@ -434,7 +434,7 @@ RW_Select = 1'd0;
 NS = INC4;
 end
 MOVE4: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd0;
 to_REG = 5'd6;
 to_IM = 1'd0;
@@ -446,7 +446,7 @@ RW_Select = 1'd0;
 NS = INC5;
 end
 MOVE5: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd20;
 to_REG = 5'd0;
 to_IM = 1'd0;
@@ -458,7 +458,7 @@ RW_Select = 1'd1;
 NS = FETCH1;
 end
 ADD: begin
-to_ALU = 3'd2;
+to_ALU = 4'd2;
 to_BUS = 5'd17;
 to_REG = 5'd0;
 to_IM = 1'd0;
@@ -470,7 +470,7 @@ RW_Select = 1'd0;
 NS = FETCH1;
 end
 SUB: begin
-to_ALU = 3'd3;
+to_ALU = 4'd3;
 to_BUS = 5'd17;
 to_REG = 5'd0;
 to_IM = 1'd0;
@@ -482,7 +482,7 @@ RW_Select = 1'd0;
 NS = FETCH1;
 end
 MUL: begin
-to_ALU = 3'd4;
+to_ALU = 4'd4;
 to_BUS = 5'd17;
 to_REG = 5'd0;
 to_IM = 1'd0;
@@ -494,7 +494,7 @@ RW_Select = 1'd0;
 NS = FETCH1;
 end
 AND: begin
-to_ALU = 3'd5;
+to_ALU = 4'd5;
 to_BUS = 5'd17;
 to_REG = 5'd0;
 to_IM = 1'd0;
@@ -506,7 +506,7 @@ RW_Select = 1'd0;
 NS = FETCH1;
 end
 OR: begin
-to_ALU = 3'd6;
+to_ALU = 4'd6;
 to_BUS = 5'd17;
 to_REG = 5'd0;
 to_IM = 1'd0;
@@ -518,7 +518,7 @@ RW_Select = 1'd0;
 NS = FETCH1;
 end
 JUMP: begin
-to_ALU = 3'd0;
+to_ALU = 4'd0;
 to_BUS = 5'd0;
 to_REG = 5'd6;
 to_IM = 1'd0;

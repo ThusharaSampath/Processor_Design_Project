@@ -31,12 +31,21 @@ module IRAM(
         MEM[3]=LOAD;
         MEM[4]=16'd1;
         MEM[5]=16'd0;
-        MEM[6]=MUL;
-        MEM[7]=STAC;
-        MEM[8]=16'd2;
-        MEM[9]=LOAD;
-        MEM[10]=16'd2;
-        MEM[11]=16'd17;
+        MEM[6]=INCAC;
+        MEM[7]=ADD;
+        MEM[8]=STAC;
+        MEM[9]=16'd2;
+        MEM[10]=LOAD;
+        MEM[11]=16'd2;
+        MEM[12]=16'd17;
+        MEM[13]=CLR;
+        MEM[14]=16'd0;
+        // MEM[15]=INC;         Not Working
+        // MEM[16]=16'd3;
+        // MEM[17]=16'd17;
+        MEM[15]=MOVE;
+        MEM[16]=16'd0;
+        MEM[17]=16'd17;
 
     end
 always @(posedge clk) begin
