@@ -6,6 +6,7 @@ input clk,
     output reg [15:0]test,
     output reg [15:0]test2,
     output reg [15:0]test3,
+    output reg [15:0]test4,
     output reg [7:0]current_micro_instruction
     );
     wire [7:0]current_micro_instruction_wire;
@@ -19,6 +20,7 @@ input clk,
     wire [15:0]test_wire;
     wire [15:0]test2_wire;
     wire [15:0]test3_wire;
+    wire [15:0]test4_wire;
     wire [0:0]finish;
 
     always @(*) 
@@ -28,6 +30,7 @@ input clk,
         test <= test_wire;
         test2 <= test2_wire;
         test3 <= test3_wire;
+        test4 <= test4_wire;
 
     end
 
@@ -44,6 +47,7 @@ input clk,
         .test(test_wire),
         .test2(test2_wire),
         .test3(test3_wire),
+        .test4(test4_wire),
         .current_micro_instruction(current_micro_instruction_wire)
         );
     IRAM IRAM(

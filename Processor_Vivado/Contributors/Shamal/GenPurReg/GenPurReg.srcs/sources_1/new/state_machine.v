@@ -431,7 +431,7 @@ to_PC = 1'd0;
 to_AC = 3'b000;
 En_Select = 1'd0;
 RW_Select = 1'd0;
-NS = INC4;
+NS = MOVE4;
 end
 MOVE4: begin
 to_ALU = 4'd0;
@@ -443,7 +443,7 @@ to_PC = 1'd1;
 to_AC = 3'b000;
 En_Select = 1'd0;
 RW_Select = 1'd0;
-NS = INC5;
+NS = MOVE5;
 end
 MOVE5: begin
 to_ALU = 4'd0;
