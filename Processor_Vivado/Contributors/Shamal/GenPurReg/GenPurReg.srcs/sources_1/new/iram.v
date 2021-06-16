@@ -27,17 +27,15 @@ module IRAM(
     initial begin
         MEM[0]=LOAD;
         MEM[1]=16'd0;
-        MEM[2]=16'd17;
-        MEM[3]=INC;
-        MEM[4]=16'd5;
-        MEM[5]=16'd17;
-        // MEM[6]=INC;
-        // MEM[7]=16'd5;
-        // MEM[8]=16'd20;
-        
-        // MEM[6]=MOVE;
-        // MEM[7]=16'd20;
-        // MEM[8]=16'd17;
+        MEM[2]=16'd20;
+        MEM[3]=JUMP;
+        MEM[4]=16'd0;
+        MEM[5]=16'd;
+        MEM[3]=ADD;
+        MEM[3]=SUB;
+        MEM[3]=MUL;
+
+
 
         // MEM[6]=INCAC;
         // MEM[7]=ADD;

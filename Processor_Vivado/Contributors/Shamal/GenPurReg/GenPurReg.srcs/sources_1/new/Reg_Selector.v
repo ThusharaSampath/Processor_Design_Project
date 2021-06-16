@@ -16,8 +16,17 @@ always @(*)
         end
     else 
        begin
-        if(rw==0)toBus = fromMDDR[4:0];
-        else toDecoder = fromMDDR[5:0];
+        if(rw==0)
+        begin
+            toBus = fromMDDR[4:0];
+            toDecoder = 6'd0;
+        end
+        else if(rw==1)
+        begin 
+            toDecoder = fromMDDR[5:0];
+            toBus = 4'd0;
+        end
+
        end
     end
 endmodule
