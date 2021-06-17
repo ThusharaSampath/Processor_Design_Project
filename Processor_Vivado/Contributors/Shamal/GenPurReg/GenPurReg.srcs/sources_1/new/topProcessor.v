@@ -63,6 +63,8 @@ module topProcessor(
         IM_in <= Mul_bus_wire[2];
         DM_in <= Mul_bus_wire[2];
         finish <= finish_wire ;
+
+        $display("AR:- ",Mul_bus_wire[0]);
      end
      
      Genaral_Purpose_Register AR (.clk(clk), .write(d_wire[0]), .data_in(bus_wire),.data_out(Mul_bus_wire[0]));
@@ -156,6 +158,7 @@ module topProcessor(
         .j(jflag_wire),
         .k(kflag_wire),
         .instruction(MIDR_wire),
+        .MDDR(Mul_bus_wire[2]),
         .to_ALU(opcode_wire),
         .to_DM(to_DM),
         .to_IM(to_IM),

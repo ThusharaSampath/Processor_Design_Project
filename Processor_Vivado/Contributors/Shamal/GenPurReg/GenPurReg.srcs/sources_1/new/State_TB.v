@@ -5,6 +5,7 @@ module State_TB;
     reg [0:0] j;
     reg [0:0] k;
     reg [7:0] instruction;
+    reg [15:0] MDDR;
     wire [2:0] to_ALU;
     wire [0:0] to_DM;
     wire [0:0] to_IM;
@@ -15,9 +16,10 @@ module State_TB;
     wire [0:0] En_Select;
     wire [0:0] RW_Select;
     wire finish;
+    parameter clk_period = 10;
     
        
-    CU statem (clk,z,i,j,k,instruction,to_ALU,to_DM,to_IM,to_REG,to_BUS,to_PC,
+    CU statem (clk,z,i,j,k,instruction,MDDR,to_ALU,to_DM,to_IM,to_REG,to_BUS,to_PC,
     to_AC,En_Select,RW_Select,finish);
        
     initial 
@@ -31,16 +33,13 @@ module State_TB;
     
     initial
         begin
-//            z=1'b0;i=1'b0;j=1'b0;k=1'b0;instruction=8'd0;
+            z=1'b0;i=1'b0;j=1'b0;k=1'b0;instruction=8'd28;MDDR=16'd0;
             #(clk_period);
             #(clk_period);
             #(clk_period);
             #(clk_period);
   
-            
-            
-        
-        
+
         end
 
 endmodule

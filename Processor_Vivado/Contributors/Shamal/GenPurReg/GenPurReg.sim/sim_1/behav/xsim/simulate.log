@@ -1,0 +1,258 @@
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+current instruction:  3 MDDR:     x
+out :-     0 z:- 1
+AR:-     x
+current instruction:  3 MDDR:     x
+AR:-     x
+current instruction:  0 MDDR:     x
+AR:-     x
+out :-     0 z:- 1
+AR:-     0
+AR:-     0
+current instruction:  1 MDDR:     x
+AR:-     0
+out :-     0 z:- 1
+AR:-     1
+current instruction:  2 MDDR:     8
+AR:-     1
+AR:-     1
+out :-     0 z:- 1
+current instruction:  2 MDDR:     8
+current instruction:  8 MDDR:     8
+AR:-     1
+AR:-     1
+out :-     0 z:- 1
+AR:-     1
+current instruction:  9 MDDR:     0
+AR:-     1
+out :-     0 z:- 1
+AR:-     0
+current instruction: 10 MDDR:     0
+AR:-     0
+AR:-     0
+out :-     0 z:- 1
+AR:-     2
+current instruction: 11 MDDR:     3
+AR:-     2
+AR:-     2
+out :-     3 z:- 0
+current instruction: 11 MDDR:     3
+AR:-     2
+current instruction: 12 MDDR:     3
+AR:-     2
+AR:-     2
+out :-     3 z:- 0
+AR:-     2
+current instruction: 13 MDDR:    17
+AR:-     2
+AR:-     2
+out :-     3 z:- 0
+AR:-     2
+current instruction:  0 MDDR:    17
+AR:-     2
+out :-     3 z:- 0
+AR:-     3
+AR:-     3
+current instruction:  1 MDDR:    17
+AR:-     3
+out :-     3 z:- 0
+AR:-     4
+current instruction:  2 MDDR:     8
+AR:-     4
+AR:-     4
+out :-     3 z:- 0
+current instruction:  8 MDDR:     8
+AR:-     4
+AR:-     4
+out :-     3 z:- 0
+AR:-     4
+current instruction:  9 MDDR:     1
+AR:-     4
+AR:-     4
+out :-     3 z:- 0
+AR:-     1
+current instruction: 10 MDDR:     1
+AR:-     1
+AR:-     1
+out :-     3 z:- 0
+AR:-     5
+current instruction: 11 MDDR:     1
+AR:-     5
+AR:-     5
+out :-     1 z:- 0
+AR:-     5
+current instruction: 12 MDDR:     1
+AR:-     5
+AR:-     5
+out :-     1 z:- 0
+AR:-     5
+current instruction: 13 MDDR:    20
+AR:-     5
+AR:-     5
+out :-     1 z:- 0
+current instruction:  0 MDDR:    20
+AR:-     5
+AR:-     5
+out :-     1 z:- 0
+AR:-     6
+AR:-     6
+current instruction:  1 MDDR:    20
+AR:-     6
+out :-     1 z:- 0
+AR:-     7
+current instruction:  2 MDDR:    28
+AR:-     7
+AR:-     7
+out :-     1 z:- 0
+current instruction:  2 MDDR:    28
+current instruction: 28 MDDR:    28
+AR:-     7
+AR:-     7
+out :-     1 z:- 0
+AR:-     7
+current instruction: 43 MDDR:     0
+AR:-     7
+out :-     1 z:- 0
+current instruction: 32 MDDR:     0
+AR:-     7
+out :-     1 z:- 0
+AR:-     7
+current instruction:  0 MDDR:     0
+AR:-     7
+AR:-     7
+out :-     1 z:- 0
+AR:-     9
+AR:-     9
+current instruction:  1 MDDR:     0
+AR:-     9
+out :-     1 z:- 0
+AR:-    10
+current instruction:  2 MDDR:    38
+AR:-    10
+AR:-    10
+out :-     1 z:- 0
+current instruction:  2 MDDR:    38
+current instruction: 38 MDDR:    38
+AR:-    10
+AR:-    10
+out :-     4 z:- 0
+AR:-    10
+current instruction:  0 MDDR:    38
+AR:-    10
+AR:-    10
+out :-     4 z:- 0
+AR:-    10
+AR:-    10
+current instruction:  1 MDDR:    38
+AR:-    10
+out :-     4 z:- 0
+AR:-    11
+current instruction:  2 MDDR:    39
+AR:-    11
+AR:-    11
+out :-     4 z:- 0
+current instruction:  2 MDDR:    39
+current instruction: 39 MDDR:    39
+AR:-    11
+AR:-    11
+out :-     1 z:- 0
+AR:-    11
+current instruction:  0 MDDR:    39
+AR:-    11
+AR:-    11
+out :-     1 z:- 0
+AR:-    11
+AR:-    11
+current instruction:  1 MDDR:    39
+AR:-    11
+out :-     1 z:- 0
+AR:-    12
+current instruction:  2 MDDR:    40
+AR:-    12
+AR:-    12
+out :-     1 z:- 0
+current instruction:  2 MDDR:    40
+current instruction: 40 MDDR:    40
+AR:-    12
+AR:-    12
+out :-     3 z:- 0
+AR:-    12
+current instruction:  0 MDDR:    40
+AR:-    12
+AR:-    12
+out :-     3 z:- 0
+AR:-    12
+AR:-    12
+current instruction:  1 MDDR:    40
+AR:-    12
+out :-     3 z:- 0
+AR:-    13
+current instruction:  2 MDDR:     x
+AR:-    13
+AR:-    13
+out :-     3 z:- 0
+current instruction:  2 MDDR:     x
+current instruction:  x MDDR:     x
+AR:-    13
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0

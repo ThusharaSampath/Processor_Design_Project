@@ -6,6 +6,8 @@ module CU(
     input [0:0] j,
     input [0:0] k,
     input [7:0] instruction,
+    input [15:0]MDDR,
+
     output reg[3:0] to_ALU,
     output reg[0:0] to_DM,
     output reg[0:0] to_IM,
@@ -17,6 +19,7 @@ module CU(
     output reg[0:0] RW_Select,
     output reg finish,
     output reg [7:0]current_micro_instruction
+    
 //    input [1:0] status
 );
     reg [5:0] PS = 8'd3;
@@ -49,7 +52,8 @@ module CU(
     parameter INC5 = 8'd25;
     parameter INC6 = 8'd26;
     parameter INCAC1 = 8'd27;
-    parameter JUMP = 8'd28;
+    parameter JUMP1 = 8'd28;
+    parameter JUMP2 = 8'd43;
     parameter JUMPY1 = 8'd29;
     parameter JUMPY2 = 8'd30;
     parameter JUMPY3 = 8'd31;
@@ -517,7 +521,8 @@ En_Select = 1'd0;
 RW_Select = 1'd0;
 NS = FETCH1;
 end
-JUMP: begin
+
+JUMP1: begin
 to_ALU = 4'd0;
 to_BUS = 5'd0;
 to_REG = 5'd6;
@@ -527,8 +532,83 @@ to_PC = 1'd1;
 to_AC = 3'b000;
 En_Select = 1'd0;
 RW_Select = 1'd0;
-NS = JUMPY1;
+NS = JUMP2;
 end
+
+JUMP2: begin
+to_ALU = 4'd0;
+to_BUS = 5'd0;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+
+if(((MDDR==16'd0 && z==1'b1) || (MDDR==16'd2 && i==1'b1) || (MDDR==16'd4 && j==1'b1) || (MDDR==16'd6 && k==1'b1) || (MDDR==16'd1 && z==1'b0) || (MDDR==16'd3 && i==1'b0) || (MDDR==16'd5 && j==1'b0) || (MDDR==16'd7 && k==1'b0))) 
+    NS = JUMPY1;
+else
+    NS = JUMPN1;
+end
+
+JUMPN1: begin
+to_ALU = 4'd0;
+to_BUS = 5'd0;
+to_REG = 5'd0;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd1;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = FETCH1;
+end
+
+JUMPY1: begin
+to_ALU = 4'd0;
+to_BUS = 5'd2;
+to_REG = 5'd1;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = JUMPY2;
+end
+
+
+JUMPY2: begin
+to_ALU = 4'd0;
+to_BUS = 5'd0;
+to_REG = 5'd6;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd1;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = JUMPY3;
+end
+
+JUMPY3: begin
+to_ALU = 4'd0;
+to_BUS = 5'd4;
+to_REG = 5'd2;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = FETCH1;
+end
+
+
+
 endcase
+
+$display("current instruction: %d MDDR: %d",PS,MDDR);
 end
 endmodule
