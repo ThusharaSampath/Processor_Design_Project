@@ -93,11 +93,11 @@ module topProcessor(
      Genaral_Purpose_Register BASE_B (.clk(clk), .write(d_wire[12]), .data_in(bus_wire),
       .data_out(Base_B_wire));
       
-     Mat_X MAT_A (.clk(clk), .X_Ref(i_ref_wire), .X(Mul_bus_wire[4]), .Base(Base_A_wire),
-      .Y(Mul_bus_wire[5]),.Mat_data_out(Mul_bus_wire[10]));
+     Mat_X MAT_A (.clk(clk), .X_Ref(i_ref_wire), .X(Mul_bus_wire[5]), .Base(Base_A_wire),
+      .Y(Mul_bus_wire[4]),.Mat_data_out(Mul_bus_wire[10]));
       
-     Mat_X MAT_B (.clk(clk), .X_Ref(j_ref_wire), .X(Mul_bus_wire[5]), .Base(Base_B_wire),
-      .Y(Mul_bus_wire[6]),.Mat_data_out(Mul_bus_wire[11]));
+     Mat_X MAT_B (.clk(clk), .X_Ref(j_ref_wire), .X(Mul_bus_wire[6]), .Base(Base_B_wire),
+      .Y(Mul_bus_wire[5]),.Mat_data_out(Mul_bus_wire[11]));
       
      Genaral_Purpose_Register P (.clk(clk), .write(d_wire[15]), .data_in(bus_wire),
       .data_out(Mul_bus_wire[7]));

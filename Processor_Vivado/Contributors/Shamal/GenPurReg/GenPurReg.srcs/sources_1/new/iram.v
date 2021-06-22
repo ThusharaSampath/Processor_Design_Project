@@ -47,7 +47,7 @@ module IRAM(
         MEM[10]=16'd3;
         MEM[11]=16'd12; //j_ref
         MEM[12]=LOAD;
-        MEM[13]=16'd9;
+        MEM[13]=16'd14;
         MEM[14]=16'd15; //k_ref
 
         //clear i,j,k
