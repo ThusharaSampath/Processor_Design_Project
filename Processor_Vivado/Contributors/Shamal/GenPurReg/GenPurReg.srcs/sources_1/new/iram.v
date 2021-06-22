@@ -25,36 +25,114 @@ module IRAM(
    
     
     initial begin
+
+        //loading
+
+        //load base a
+        //load base b
+        //load i_ref
+        //load j_ref
+        //load k_ref
+
         MEM[0]=LOAD;
         MEM[1]=16'd0;
-        MEM[2]=16'd17;
+        MEM[2]=16'd10; //mat_a
         MEM[3]=LOAD;
         MEM[4]=16'd1;
-        MEM[5]=16'd20;
-        MEM[6]=JUMP;
-        MEM[7]=16'd0;
-        MEM[8]=16'd11;
-        MEM[9]=ADD;
-        MEM[10]=SUB;
-        MEM[11]=MUL;
+        MEM[5]=16'd13; //mat_a
+        MEM[6]=LOAD;
+        MEM[7]=16'd2;
+        MEM[8]=16'd9; //i_ref
+        MEM[9]=LOAD;
+        MEM[10]=16'd3;
+        MEM[11]=16'd12; //j_ref
+        MEM[12]=LOAD;
+        MEM[13]=16'd9;
+        MEM[14]=16'd15; //k_ref
+
+        //clear i,j,k
+        MEM[15]=CLR;
+        MEM[16]=16'd8;
+        MEM[17]=CLR;
+        MEM[18]=16'd11;
+        MEM[19]=CLR;
+        MEM[20]=16'd14;
+
+        MEM[21]=CLR;
+        MEM[22]=16'd16;
+
+
+        //load first number of matrix a to AC
+        MEM[23]=LOADM;
+        MEM[24]=16'd21;
+
+        //move ac to r
+        MEM[25]=MOVE;
+        MEM[26]=16'd20;
+        MEM[27]=16'd17;
+
+        //load first number of matrix b to AC
+        MEM[28]=LOADM;
+        MEM[29]=16'd22;
+        
+        MEM[30]=MUL;
+
+        //move ac to r
+        MEM[31]=MOVE;
+        MEM[32]=16'd20;
+        MEM[33]=16'd17;
+
+        //move p to ac
+        MEM[34]=MOVE;
+        MEM[35]=16'd16;
+        MEM[36]=16'd20;
+
+        MEM[37]=ADD;
+
+        //move ac to p
+        MEM[38]=MOVE;
+        MEM[39]=16'd20;
+        MEM[40]=16'd16;
+
+        //inc j
+        MEM[41]=INC;
+        MEM[42]=16'd1;
+        MEM[43]=16'd11;
+
+        MEM[44]=JUMP;
+        MEM[45]=16'd5;
+        MEM[46]=16'd23;
+
+        //inc k
+        MEM[47]=INC;
+        MEM[48]=16'd1;
+        MEM[49]=16'd14;
+
+        MEM[50]=CLR;
+        MEM[51]=16'd11;
+
+        MEM[52]=JUMP;
+        MEM[53]=16'd7;
+        MEM[54]=16'd21;
+
+
+        //inc i
+        MEM[55]=INC;
+        MEM[56]=16'd1;
+        MEM[57]=16'd8;
+
+        MEM[58]=CLR;
+        MEM[59]=16'd14;
+
+        MEM[60]=JUMP;
+        MEM[61]=16'd3;
+        MEM[62]=16'd21;
 
 
 
-        // MEM[6]=INCAC;
-        // MEM[7]=ADD;
-        // MEM[8]=STAC;
-        // MEM[9]=16'd2;
-        // MEM[10]=LOAD;
-        // MEM[11]=16'd2;
-        // MEM[12]=16'd17;
-        // MEM[13]=CLR;
-        // MEM[14]=16'd0;
-        // MEM[15]=INC;         Not Working
-        // MEM[16]=16'd3;
-        // MEM[17]=16'd17;
-        // MEM[15]=MOVE;
-        // MEM[16]=16'd0;
-        // MEM[17]=16'd17;
+
+
+
 
     end
 always @(posedge clk) begin

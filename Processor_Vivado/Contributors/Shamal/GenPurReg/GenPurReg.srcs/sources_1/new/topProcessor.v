@@ -32,9 +32,9 @@ module topProcessor(
     wire [0:0] jflag_wire;
     wire [0:0] kflag_wire;
     wire [0:0] zflag_wire;
-    wire [0:0] i_ref_wire;
-    wire [0:0] j_ref_wire;
-    wire [0:0] k_ref_wire;
+    wire [15:0] i_ref_wire;
+    wire [15:0] j_ref_wire;
+    wire [15:0] k_ref_wire;
     wire [3:0] opcode_wire;
     wire [2:0] ac_cu_wire;
     wire [5:0] cu_decoder_wire;//select reg by cu
@@ -64,7 +64,7 @@ module topProcessor(
         DM_in <= Mul_bus_wire[2];
         finish <= finish_wire ;
 
-        $display("AR:- ",Mul_bus_wire[0]);
+        $display("AR:- %d , I:- %d, I_ref:- %d, J:- %d, J_ref:- %d, base_A: %d, K:- %d, K_ref:- %d,base_B: %d, P:- %d, MAT_A:- %d, MAT_B:- %d" ,Mul_bus_wire[0],Mul_bus_wire[4],i_ref_wire,Mul_bus_wire[5],j_ref_wire,Base_A_wire,Mul_bus_wire[6],k_ref_wire,Base_B_wire,Mul_bus_wire[7],Mul_bus_wire[10],Mul_bus_wire[11]);
      end
      
      Genaral_Purpose_Register AR (.clk(clk), .write(d_wire[0]), .data_in(bus_wire),.data_out(Mul_bus_wire[0]));

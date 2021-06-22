@@ -13,5 +13,6 @@ module Mat_X
      always @(*)
         begin
             Mat_data_out <= Y*X_Ref + X+Base;
+            $display("Mat addres :",Mat_data_out);
         end
 endmodule

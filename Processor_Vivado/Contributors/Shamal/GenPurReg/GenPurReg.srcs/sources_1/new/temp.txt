@@ -1,0 +1,19 @@
+load i_ref,j_ref,k_ref,base_a,base_b
+
+i=0
+j=0
+k=0
+
+loop i
+    look k
+        loop j
+            p = p + matA[i,j] * matB[j,k]
+            j = j+1
+            jump according to j_flag
+        k = k+1
+        j =0
+        jump according to k_flag
+    i = i+1
+    k=0
+    jump according to i_flag
+
