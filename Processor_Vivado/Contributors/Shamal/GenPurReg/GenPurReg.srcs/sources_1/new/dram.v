@@ -45,7 +45,11 @@ module dram(
         always @(posedge clk)
             begin
                 if (write == 1)
-                MEM[address] <= data_in[15:0];
+                begin
+                    MEM[address] <= data_in[15:0];
+                    $display("address:- %d, mem_data_in:- %d",address,data_in);
+                end
                 data_out <= MEM[address];
+                
             end
 endmodule

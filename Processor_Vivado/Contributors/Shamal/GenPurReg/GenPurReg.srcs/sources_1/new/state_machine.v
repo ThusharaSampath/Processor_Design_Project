@@ -68,6 +68,10 @@ module CU(
     parameter MUL = 8'd40;
     parameter AND = 8'd41;
     parameter OR = 8'd42;
+
+    parameter STORM1 = 8'd44;
+    parameter STORM2 = 8'd45;
+
 always @(posedge clk)
 begin
 PS <= NS;
@@ -604,6 +608,34 @@ En_Select = 1'd0;
 RW_Select = 1'd0;
 NS = FETCH1;
 end
+
+STORM1: begin
+to_ALU = 4'd0;
+to_BUS = 5'd7;
+to_REG = 5'd1;
+to_IM = 1'd0;
+to_DM = 1'd0;
+to_PC = 1'd0;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = STORM2;
+end
+
+STORM2: begin
+to_ALU = 4'd0;
+to_BUS = 5'd20;
+to_REG = 5'd4;
+to_IM = 1'd0;
+to_DM = 1'd1;
+to_PC = 1'd0;
+to_AC = 3'b000;
+En_Select = 1'd0;
+RW_Select = 1'd0;
+NS = FETCH1;
+end
+
+
 
 
 

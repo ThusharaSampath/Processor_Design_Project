@@ -22,6 +22,7 @@ module IRAM(
     parameter MUL = 8'd40;
     parameter AND = 8'd41;
     parameter OR = 8'd42;
+    parameter STORM = 8'd44;
    
     
     initial begin
@@ -109,32 +110,44 @@ module IRAM(
         MEM[48]=16'd5;
         MEM[49]=16'd26;
 
+        //move p to ac
+        MEM[50]=MOVE;
+        MEM[51]=16'd16;
+        MEM[52]=16'd20;
+
+        //store m
+        MEM[53]=STORM;
+
+
         //inc k
-        MEM[50]=INC;
-        MEM[51]=16'd1;
-        MEM[52]=16'd14;
+        MEM[54]=INC;
+        MEM[55]=16'd1;
+        MEM[56]=16'd14;
 
-        MEM[53]=CLR;
-        MEM[54]=16'd11;
+        MEM[57]=CLR;
+        MEM[58]=16'd11; //ckear j
 
-        MEM[55]=JUMP;
-        MEM[56]=16'd7;
-        MEM[57]=16'd24;
+        
+
+
+        MEM[59]=JUMP;
+        MEM[60]=16'd7;
+        MEM[61]=16'd24;
 
 
         //inc i
-        MEM[58]=INC;
-        MEM[59]=16'd1;
-        MEM[60]=16'd8;
+        MEM[62]=INC;
+        MEM[63]=16'd1;
+        MEM[64]=16'd8;
 
-        MEM[61]=CLR;
-        MEM[62]=16'd14;
+        MEM[65]=CLR;
+        MEM[66]=16'd14;
 
-        MEM[63]=JUMP;
-        MEM[64]=16'd3;
-        MEM[65]=16'd24;
+        MEM[67]=JUMP;
+        MEM[68]=16'd3;
+        MEM[69]=16'd24;
 
-        MEM[66]=END;
+        MEM[70]=END;
 
 
 

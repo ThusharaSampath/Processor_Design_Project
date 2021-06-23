@@ -13,7 +13,7 @@ module BUS(
     input [15:0] I,
     input [15:0] J,
     input [15:0] K,
-    input [15:0] BASE,
+    input [15:0] Mat_C,
     output reg [15:0] out) ;
     reg [4:0] reg_select;
 always @(*)
@@ -24,7 +24,7 @@ always @(*)
         5'd1: out = AR;
         5'd2: out = PC;
         5'd4: out = MDDR;
-        5'd7: out = BASE;
+        5'd7: out = Mat_C;
         5'd8: out = I;
         5'd11: out = J;
         5'd14: out = K;

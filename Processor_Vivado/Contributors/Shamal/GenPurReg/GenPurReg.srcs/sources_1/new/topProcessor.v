@@ -25,6 +25,7 @@ module topProcessor(
     wire [15:0] data_DM;
     wire [15:0] Base_A_wire;
     wire [15:0] Base_B_wire;
+    wire [15:0] Base_C_wire;
     wire [15:0] alu_out;
     wire [15:0] Mul_bus_wire [11:0];
     wire [0:0] PC_inc_wire;
@@ -64,7 +65,7 @@ module topProcessor(
         DM_in <= Mul_bus_wire[2];
         finish <= finish_wire ;
         if(finish==1'd1) $display("finish");
-        $display("AR:- %d , I:- %d, I_ref:- %d, J:- %d, J_ref:- %d, base_A: %d, K:- %d, K_ref:- %d,base_B: %d, P:- %d, MAT_A:- %d, MAT_B:- %d" ,Mul_bus_wire[0],Mul_bus_wire[4],i_ref_wire,Mul_bus_wire[5],j_ref_wire,Base_A_wire,Mul_bus_wire[6],k_ref_wire,Base_B_wire,Mul_bus_wire[7],Mul_bus_wire[10],Mul_bus_wire[11]);
+        $display("AR:- %d , I:- %d, I_ref:- %d, J:- %d, J_ref:- %d, base_A: %d, K:- %d, K_ref:- %d,base_B: %d, P:- %d, MAT_A:- %d, MAT_B:- %d, MAT_C:- %d" ,Mul_bus_wire[0],Mul_bus_wire[4],i_ref_wire,Mul_bus_wire[5],j_ref_wire,Base_A_wire,Mul_bus_wire[6],k_ref_wire,Base_B_wire,Mul_bus_wire[7],Mul_bus_wire[10],Mul_bus_wire[11],Mul_bus_wire[3]);
      end
      
      Genaral_Purpose_Register AR (.clk(clk), .write(d_wire[0]), .data_in(bus_wire),.data_out(Mul_bus_wire[0]));
@@ -76,7 +77,7 @@ module topProcessor(
      mddr MDDR (.clk(clk), .write_ins(d_wire[4]),.write_data(d_wire[5]),.write_bus(d_wire[3]),.data_in_ins(data_IM),
      .data_in_data(data_DM),.data_in_bus(bus_wire),.data_out(Mul_bus_wire[2]));
      
-     Genaral_Purpose_Register BASE (.clk(clk), .write(d_wire[6]), .data_in(bus_wire),.data_out(Mul_bus_wire[3]));
+     Genaral_Purpose_Register BASE_C (.clk(clk), .write(d_wire[6]), .data_in(bus_wire),.data_out(Base_C_wire));
       
      Reg_X I (.clk(clk), .write_i(d_wire[7]),.write_iref(d_wire[8]), .data_in(bus_wire),.iflag(iflag_wire), 
      .data_out_i(Mul_bus_wire[4]), .data_out_iref(i_ref_wire));
@@ -98,6 +99,11 @@ module topProcessor(
       
      Mat_X MAT_B (.clk(clk), .X_Ref(j_ref_wire), .X(Mul_bus_wire[6]), .Base(Base_B_wire),
       .Y(Mul_bus_wire[5]),.Mat_data_out(Mul_bus_wire[11]));
+
+
+     Mat_X MAT_C (.clk(clk), .X_Ref(i_ref_wire), .X(Mul_bus_wire[6]), .Base(Base_C_wire),
+      .Y(Mul_bus_wire[4]),.Mat_data_out(Mul_bus_wire[3]));
+
       
      Genaral_Purpose_Register P (.clk(clk), .write(d_wire[15]), .data_in(bus_wire),
       .data_out(Mul_bus_wire[7]));
@@ -148,7 +154,7 @@ module topProcessor(
     .I(Mul_bus_wire[4]),
     .J(Mul_bus_wire[5]),
     .K(Mul_bus_wire[6]),
-    .BASE(Mul_bus_wire[3]),
+    .Mat_C(Mul_bus_wire[3]),
     .out(bus_wire)
     );
     CU cu(

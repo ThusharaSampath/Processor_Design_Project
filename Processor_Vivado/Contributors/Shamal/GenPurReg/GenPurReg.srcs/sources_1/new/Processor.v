@@ -7,7 +7,8 @@ input clk,
     output reg [15:0]test2,
     output reg [15:0]test3,
     output reg [15:0]test4,
-    output reg [7:0]current_micro_instruction
+    output reg [7:0]current_micro_instruction,
+    output reg [0:0]finish
     );
     wire [7:0]current_micro_instruction_wire;
     wire [0:0]en_from_cpu_to_IM;
@@ -21,7 +22,7 @@ input clk,
     wire [15:0]test2_wire;
     wire [15:0]test3_wire;
     wire [15:0]test4_wire;
-    wire [0:0]finish;
+    wire [0:0]finish_wire;
 
     always @(*) 
     begin
@@ -31,6 +32,7 @@ input clk,
         test2 <= test2_wire;
         test3 <= test3_wire;
         test4 <= test4_wire;
+        finish<=finish_wire;
 
     end
 
@@ -43,7 +45,7 @@ input clk,
         .DM_en(en_from_cpu_to_DM),
         .IM_en(en_from_cpu_to_IM),
         .AR_out(data_from_AR_to_M),
-        .finish(finish),
+        .finish(finish_wire),
         .test(test_wire),
         .test2(test2_wire),
         .test3(test3_wire),
