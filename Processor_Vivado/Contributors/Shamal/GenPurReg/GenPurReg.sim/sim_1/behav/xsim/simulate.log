@@ -11287,4 +11287,34 @@ out :-     3 z:- 0
 current instruction: 32 MDDR:-     3
 AR:-    61 , I:-     3, I_ref:-     3, J:-     0, J_ref:-     3, base_A:     4, K:-     0, K_ref:-     3,base_B:    15, P:-   186, MAT_A:-    13, MAT_B:-    15
 out :-     3 z:- 0
-AR:-    61 , I:-     3, I_ref:-     3, J:-     0, J_ref:-     3, base_A:     4, K:-     0, K_re
+AR:-    61 , I:-     3, I_ref:-     3, J:-     0, J_ref:-     3, base_A:     4, K:-     0, K_ref:-     3,base_B:    15, P:-   186, MAT_A:-    13, MAT_B:-    15
+current instruction:  0 MDDR:-     3
+AR:-    61 , I:-     3, I_ref:-     3, J:-     0, J_ref:-     3, base_A:     4, K:-     0, K_ref:-     3,base_B:    15, P:-   186, MAT_A:-    13, MAT_B:-    15
+AR:-    61 , I:-     3, I_ref:-     3, J:-     0, J_ref:-     3, base_A:     4, K:-     0, K_ref:-     3,base_B:    15, P:-   186, MAT_A:-    13, MAT_B:-    15
+out :-     3 z:- 0
+AR:-    63 , I:-     3, I_ref:-     3, J:-     0, J_ref:-     3, base_A:     4, K:-     0, K_ref:-     3,base_B:    15, P:-   186, MAT_A:-    13, MAT_B:-    15
+AR:-    63 , I:-     3, I_ref:-     3, J:-     0, J_ref:-     3, base_A:     4, K:-     0, K_ref:-     3,base_B:    15, P:-   186, MAT_A:-    13, MAT_B:-    15
+current instruction:  1 MDDR:-     3
+AR:-    63 , I:-     3, I_ref:-     3, J:-     0, J_ref:-     3, base_A:     4, K:-     0, K_ref:-     3,base_B:    15, P:-   186, MAT_A:-    13, MAT_B:-    15
+out :-     3 z:- 0
+AR:-    64 , I:-     3, I_ref:-     3, J:-     0, J_ref:-     3, base_A:     4, K:-     0, K_ref:-     3,base_B:    15, P:-   186, MAT_A:-    13, MAT_B:-    15
+current instruction:  2 MDDR:-     x
+AR:-    64 , I:-     3, I_ref:-     3, J:-     0, J_ref:-     3, base_A:     4, K:-     0, K_ref:-     3,base_B:    15, P:-   186, MAT_A:-    13, MAT_B:-    15
+AR:-    64 , I:-     3, I_ref:-     3, J:-     0, J_ref:-     3, base_A:     4, K:-     0, K_ref:-     3,base_B:    15, P:-   186, MAT_A:-    13, MAT_B:-    15
+out :-     3 z:- 0
+current instruction:  2 MDDR:-     x
+current instruction:  x MDDR:-     x
+AR:-    64 , I:-     3, I_ref:-     3, J:-     0, J_ref:-     3, base_A:     4, K:-     0, K_ref:-     3,base_B:    15, P:-   186, MAT_A:-    13, MAT_B:-    15
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
+out :-     3 z:- 0
