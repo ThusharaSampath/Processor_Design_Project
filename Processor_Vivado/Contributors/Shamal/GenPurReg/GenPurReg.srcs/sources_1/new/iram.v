@@ -46,7 +46,6 @@ module IRAM(
         MEM[7]=16'd2;
         MEM[8]=16'd7; //base
 
-        
         MEM[9]=LOAD;
         MEM[10]=16'd3;
         MEM[11]=16'd9; //i_ref
@@ -121,13 +120,11 @@ module IRAM(
 
         //inc k
         MEM[54]=INC;
-        MEM[55]=16'd1;
+        MEM[55]=16'd6;
         MEM[56]=16'd14;
 
         MEM[57]=CLR;
         MEM[58]=16'd11; //ckear j
-
-        
 
 
         MEM[59]=JUMP;
@@ -140,14 +137,29 @@ module IRAM(
         MEM[63]=16'd1;
         MEM[64]=16'd8;
 
-        MEM[65]=CLR;
-        MEM[66]=16'd14;
+        //move k_ref to r
+        MEM[65]=MOVE;
+        MEM[66]=16'd15;
+        MEM[67]=16'd17;
 
-        MEM[67]=JUMP;
-        MEM[68]=16'd3;
-        MEM[69]=16'd24;
+        //move k to ac
+        MEM[68]=MOVE;
+        MEM[69]=16'd14;
+        MEM[70]=16'd20;
 
-        MEM[70]=END;
+        //ac = ac -r
+        MEM[71]=SUB;
+
+        //k <- ac
+        MEM[72]=MOVE;
+        MEM[73]=16'd20;
+        MEM[74]=16'd14;
+
+        MEM[75]=JUMP;
+        MEM[76]=16'd3;
+        MEM[77]=16'd24;
+
+        MEM[78]=END;
 
 
 

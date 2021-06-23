@@ -152,8 +152,11 @@ module topProcessor(
     .MDDR(Mul_bus_wire[2]),
     .AC(Mul_bus_wire[9]),
     .I(Mul_bus_wire[4]),
+    .I_ref(i_ref_wire),
     .J(Mul_bus_wire[5]),
+    .J_ref(j_ref_wire),
     .K(Mul_bus_wire[6]),
+    .K_ref(k_ref_wire),
     .Mat_C(Mul_bus_wire[3]),
     .out(bus_wire)
     );
