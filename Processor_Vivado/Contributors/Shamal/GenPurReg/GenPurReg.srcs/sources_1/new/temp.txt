@@ -17,6 +17,6 @@ loop i
         j =0
         jump according to k_flag
     i = i+1
-    k=k%k_ref
+    k=k - k_ref
     jump according to i_flag
 
