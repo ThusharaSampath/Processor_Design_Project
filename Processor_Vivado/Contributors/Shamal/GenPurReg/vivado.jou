@@ -101,3 +101,26 @@ source ProcessorTB.tcl
 close_sim
 launch_simulation
 source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
+launch_simulation
+source ProcessorTB.tcl
+close_sim
