@@ -12,3 +12,6 @@ module Genaral_Purpose_Register
             if (write) data_out <= data_in;
         end
 endmodule
+
+
+

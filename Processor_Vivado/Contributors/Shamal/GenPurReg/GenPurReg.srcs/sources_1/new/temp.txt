@@ -12,6 +12,8 @@ loop i
             jump according to j_flag
         k = k+1
         j =0
+        ac = p
+        store ac to base 
         jump according to k_flag
     i = i+1
     k=0

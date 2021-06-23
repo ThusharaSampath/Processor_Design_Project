@@ -63,7 +63,7 @@ module topProcessor(
         IM_in <= Mul_bus_wire[2];
         DM_in <= Mul_bus_wire[2];
         finish <= finish_wire ;
-
+        if(finish==1'd1) $display("finish");
         $display("AR:- %d , I:- %d, I_ref:- %d, J:- %d, J_ref:- %d, base_A: %d, K:- %d, K_ref:- %d,base_B: %d, P:- %d, MAT_A:- %d, MAT_B:- %d" ,Mul_bus_wire[0],Mul_bus_wire[4],i_ref_wire,Mul_bus_wire[5],j_ref_wire,Base_A_wire,Mul_bus_wire[6],k_ref_wire,Base_B_wire,Mul_bus_wire[7],Mul_bus_wire[10],Mul_bus_wire[11]);
      end
      

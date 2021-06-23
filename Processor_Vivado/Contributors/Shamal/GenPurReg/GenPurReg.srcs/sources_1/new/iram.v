@@ -40,95 +40,101 @@ module IRAM(
         MEM[3]=LOAD;
         MEM[4]=16'd1;
         MEM[5]=16'd13; //mat_a
+
         MEM[6]=LOAD;
         MEM[7]=16'd2;
-        MEM[8]=16'd9; //i_ref
+        MEM[8]=16'd7; //base
+
+        
         MEM[9]=LOAD;
         MEM[10]=16'd3;
-        MEM[11]=16'd12; //j_ref
+        MEM[11]=16'd9; //i_ref
         MEM[12]=LOAD;
-        MEM[13]=16'd14;
-        MEM[14]=16'd15; //k_ref
+        MEM[13]=16'd4;
+        MEM[14]=16'd12; //j_ref
+        MEM[15]=LOAD;
+        MEM[16]=16'd15; //address in d-memory
+        MEM[17]=16'd15; //k_ref
 
         //clear i,j,k
-        MEM[15]=CLR;
-        MEM[16]=16'd8;
-        MEM[17]=CLR;
-        MEM[18]=16'd11;
-        MEM[19]=CLR;
-        MEM[20]=16'd14;
+        MEM[18]=CLR;
+        MEM[19]=16'd8;
+        MEM[20]=CLR;
+        MEM[21]=16'd11;
+        MEM[22]=CLR;
+        MEM[23]=16'd14;
 
-        MEM[21]=CLR;
-        MEM[22]=16'd16;
+        MEM[24]=CLR;
+        MEM[25]=16'd16;
 
 
         //load first number of matrix a to AC
-        MEM[23]=LOADM;
-        MEM[24]=16'd21;
+        MEM[26]=LOADM;
+        MEM[27]=16'd21;
 
         //move ac to r
-        MEM[25]=MOVE;
-        MEM[26]=16'd20;
-        MEM[27]=16'd17;
+        MEM[28]=MOVE;
+        MEM[29]=16'd20;
+        MEM[30]=16'd17;
 
         //load first number of matrix b to AC
-        MEM[28]=LOADM;
-        MEM[29]=16'd22;
+        MEM[31]=LOADM;
+        MEM[32]=16'd22;
         
-        MEM[30]=MUL;
+        MEM[33]=MUL;
 
         //move ac to r
-        MEM[31]=MOVE;
-        MEM[32]=16'd20;
-        MEM[33]=16'd17;
+        MEM[34]=MOVE;
+        MEM[35]=16'd20;
+        MEM[36]=16'd17;
 
         //move p to ac
-        MEM[34]=MOVE;
-        MEM[35]=16'd16;
-        MEM[36]=16'd20;
+        MEM[37]=MOVE;
+        MEM[38]=16'd16;
+        MEM[39]=16'd20;
 
-        MEM[37]=ADD;
+        MEM[40]=ADD;
 
         //move ac to p
-        MEM[38]=MOVE;
-        MEM[39]=16'd20;
-        MEM[40]=16'd16;
+        MEM[41]=MOVE;
+        MEM[42]=16'd20;
+        MEM[43]=16'd16;
 
         //inc j
-        MEM[41]=INC;
-        MEM[42]=16'd1;
-        MEM[43]=16'd11;
+        MEM[44]=INC;
+        MEM[45]=16'd1;
+        MEM[46]=16'd11;
 
-        MEM[44]=JUMP;
-        MEM[45]=16'd5;
-        MEM[46]=16'd23;
+        MEM[47]=JUMP;
+        MEM[48]=16'd5;
+        MEM[49]=16'd26;
 
         //inc k
-        MEM[47]=INC;
-        MEM[48]=16'd1;
-        MEM[49]=16'd14;
+        MEM[50]=INC;
+        MEM[51]=16'd1;
+        MEM[52]=16'd14;
 
-        MEM[50]=CLR;
-        MEM[51]=16'd11;
+        MEM[53]=CLR;
+        MEM[54]=16'd11;
 
-        MEM[52]=JUMP;
-        MEM[53]=16'd7;
-        MEM[54]=16'd21;
+        MEM[55]=JUMP;
+        MEM[56]=16'd7;
+        MEM[57]=16'd24;
 
 
         //inc i
-        MEM[55]=INC;
-        MEM[56]=16'd1;
-        MEM[57]=16'd8;
+        MEM[58]=INC;
+        MEM[59]=16'd1;
+        MEM[60]=16'd8;
 
-        MEM[58]=CLR;
-        MEM[59]=16'd14;
+        MEM[61]=CLR;
+        MEM[62]=16'd14;
 
-        MEM[60]=JUMP;
-        MEM[61]=16'd3;
-        MEM[62]=16'd21;
+        MEM[63]=JUMP;
+        MEM[64]=16'd3;
+        MEM[65]=16'd24;
 
-
+        MEM[66]=END;
 
 
 
