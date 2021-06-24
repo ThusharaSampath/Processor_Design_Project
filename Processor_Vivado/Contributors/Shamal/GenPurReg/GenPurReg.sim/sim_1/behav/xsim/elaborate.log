@@ -1,0 +1,29 @@
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 3187334876f94aed840dfe80b96e32f5 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot ProcessorTB_behav xil_defaultlib.ProcessorTB xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 3 for port 'op_code' [Z:/6B/processor/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.srcs/sources_1/new/topProcessor.v:118]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 8 for port 'instruction' [Z:/6B/processor/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.srcs/sources_1/new/topProcessor.v:173]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Genaral_Purpose_Register
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.mddr
+Compiling module xil_defaultlib.Reg_X
+Compiling module xil_defaultlib.Mat_X
+Compiling module xil_defaultlib.main_alu
+Compiling module xil_defaultlib.ac
+Compiling module xil_defaultlib.decoder
+Compiling module xil_defaultlib.BUS
+Compiling module xil_defaultlib.CU
+Compiling module xil_defaultlib.regSelect
+Compiling module xil_defaultlib.topProcessor
+Compiling module xil_defaultlib.IRAM
+Compiling module xil_defaultlib.dram
+Compiling module xil_defaultlib.Processor
+Compiling module xil_defaultlib.ProcessorTB
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot ProcessorTB_behav
