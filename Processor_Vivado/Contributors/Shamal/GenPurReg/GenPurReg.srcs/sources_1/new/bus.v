@@ -17,6 +17,7 @@ module BUS(
     input [15:0] K,
     input [15:0] K_ref,
     input [15:0] Mat_C,
+    input [15:0] proId,
     output reg [15:0] out) ;
     reg [4:0] reg_select;
 always @(*)
@@ -39,6 +40,7 @@ always @(*)
         5'd20: out = AC;
         5'd21: out = Mat_A;
         5'd22: out = Mat_B;
+        5'd23: out = proId;
         default: out= 16'd0;
     endcase
     end

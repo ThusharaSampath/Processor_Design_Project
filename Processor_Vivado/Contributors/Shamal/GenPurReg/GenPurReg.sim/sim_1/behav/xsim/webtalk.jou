@@ -2,11 +2,11 @@
 # Webtalk v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Wed Jun 23 13:37:03 2021
-# Process ID: 45968
-# Current directory: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.sim/sim_1/behav/xsim/xsim.dir/ProcessorTB_behav/webtalk/xsim_webtalk.tcl -notrace
-# Log file: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.sim/sim_1/behav/xsim/webtalk.log
-# Journal file: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.sim/sim_1/behav/xsim\webtalk.jou
+# Start of session at: Thu Jun 24 14:20:14 2021
+# Process ID: 9308
+# Current directory: Z:/6B/processor/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source Z:/6B/processor/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.sim/sim_1/behav/xsim/xsim.dir/ProcessorTB_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: Z:/6B/processor/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: Z:/6B/processor/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source E:/Acedemic/sem -notrace
+source Z:/6B/processor/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.sim/sim_1/behav/xsim/xsim.dir/ProcessorTB_behav/webtalk/xsim_webtalk.tcl -notrace

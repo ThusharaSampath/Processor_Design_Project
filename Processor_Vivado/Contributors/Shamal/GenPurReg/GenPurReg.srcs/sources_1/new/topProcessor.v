@@ -2,6 +2,7 @@ module topProcessor(
     input clk,
     input  [15:0]DM_out,//from data mem to proc(MDDR)
     input  [15:0]IM_out,
+    input  [15:0]proId,
     output reg [15:0]IM_in,
     output reg [15:0]DM_in,//from processor(MDDR) to data mem (data)
     output reg [0:0]DM_en,//from processor to data mem (control signal)
@@ -27,7 +28,7 @@ module topProcessor(
     wire [15:0] Base_B_wire;
     wire [15:0] Base_C_wire;
     wire [15:0] alu_out;
-    wire [15:0] Mul_bus_wire [11:0];
+    wire [15:0] Mul_bus_wire [12:0];
     wire [0:0] PC_inc_wire;
     wire [0:0] iflag_wire;
     wire [0:0] jflag_wire;
@@ -68,6 +69,8 @@ module topProcessor(
         $display("AR:- %d , I:- %d, I_ref:- %d, J:- %d, J_ref:- %d, base_A: %d, K:- %d, K_ref:- %d,base_B: %d, P:- %d, MAT_A:- %d, MAT_B:- %d, MAT_C:- %d" ,Mul_bus_wire[0],Mul_bus_wire[4],i_ref_wire,Mul_bus_wire[5],j_ref_wire,Base_A_wire,Mul_bus_wire[6],k_ref_wire,Base_B_wire,Mul_bus_wire[7],Mul_bus_wire[10],Mul_bus_wire[11],Mul_bus_wire[3]);
      end
      
+     Genaral_Purpose_Register id (.clk(clk), .write(1'd1), .data_in(proId),.data_out(Mul_bus_wire[12]));
+
      Genaral_Purpose_Register AR (.clk(clk), .write(d_wire[0]), .data_in(bus_wire),.data_out(Mul_bus_wire[0]));
       
      PC PC (.clk(clk), .write(d_wire[1]), .incpc(PC_inc_wire), .data_in(bus_wire),.data_out(Mul_bus_wire[1]));
@@ -158,6 +161,7 @@ module topProcessor(
     .K(Mul_bus_wire[6]),
     .K_ref(k_ref_wire),
     .Mat_C(Mul_bus_wire[3]),
+    .proId(Mul_bus_wire[12]),
     .out(bus_wire)
     );
     CU cu(

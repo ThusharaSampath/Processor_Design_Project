@@ -1,9 +1,9 @@
 module IRAM(
     input clk,
-    input write,
-    input [15:0] address,
-    input [15:0] instr_in,
-    output reg [15:0] instr_out
+    input [3:0]write,
+    input [63:0] address,
+    input [63:0] instr_in,
+    output reg [63:0] instr_out
     );
     reg [15:0] MEM [65535:0];
     parameter FETCH = 8'd0;
@@ -61,116 +61,138 @@ module IRAM(
         MEM[19]=16'd8;
         MEM[20]=CLR;
         MEM[21]=16'd11;
-        MEM[22]=CLR;
-        MEM[23]=16'd14;
+        MEM[22]=MOVE;
+        MEM[23]=16'd23;
+        MEM[24]=16'd14;
 
-        MEM[24]=CLR;
-        MEM[25]=16'd16;
+
+
+        MEM[25]=CLR;
+        MEM[26]=16'd16;
 
 
         //load first number of matrix a to AC
-        MEM[26]=LOADM;
-        MEM[27]=16'd21;
+        MEM[27]=LOADM;
+        MEM[28]=16'd21;
 
         //move ac to r
-        MEM[28]=MOVE;
-        MEM[29]=16'd20;
-        MEM[30]=16'd17;
+        MEM[29]=MOVE;
+        MEM[30]=16'd20;
+        MEM[31]=16'd17;
 
         //load first number of matrix b to AC
-        MEM[31]=LOADM;
-        MEM[32]=16'd22;
+        MEM[32]=LOADM;
+        MEM[33]=16'd22;
         
-        MEM[33]=MUL;
+        MEM[34]=MUL;
 
         //move ac to r
-        MEM[34]=MOVE;
-        MEM[35]=16'd20;
-        MEM[36]=16'd17;
+        MEM[35]=MOVE;
+        MEM[36]=16'd20;
+        MEM[37]=16'd17;
 
         //move p to ac
-        MEM[37]=MOVE;
-        MEM[38]=16'd16;
-        MEM[39]=16'd20;
+        MEM[38]=MOVE;
+        MEM[39]=16'd16;
+        MEM[40]=16'd20;
 
-        MEM[40]=ADD;
+        MEM[41]=ADD;
 
         //move ac to p
-        MEM[41]=MOVE;
-        MEM[42]=16'd20;
-        MEM[43]=16'd16;
+        MEM[42]=MOVE;
+        MEM[43]=16'd20;
+        MEM[44]=16'd16;
 
         //inc j
-        MEM[44]=INC;
-        MEM[45]=16'd1;
-        MEM[46]=16'd11;
+        MEM[45]=INC;
+        MEM[46]=16'd1;
+        MEM[47]=16'd11;
 
-        MEM[47]=JUMP;
-        MEM[48]=16'd5;
-        MEM[49]=16'd26;
+        MEM[48]=JUMP;
+        MEM[49]=16'd5;
+        MEM[50]=16'd27;
 
         //move p to ac
-        MEM[50]=MOVE;
-        MEM[51]=16'd16;
-        MEM[52]=16'd20;
+        MEM[51]=MOVE;
+        MEM[52]=16'd16;
+        MEM[53]=16'd20;
 
         //store m
-        MEM[53]=STORM;
+        MEM[54]=STORM;
 
 
         //inc k
-        MEM[54]=INC;
-        MEM[55]=16'd6;
-        MEM[56]=16'd14;
+        MEM[55]=INC;
+        MEM[56]=16'd3;
+        MEM[57]=16'd14;
 
-        MEM[57]=CLR;
-        MEM[58]=16'd11; //ckear j
+        MEM[58]=CLR;
+        MEM[59]=16'd11; //ckear j
 
 
-        MEM[59]=JUMP;
-        MEM[60]=16'd7;
-        MEM[61]=16'd24;
+        MEM[60]=JUMP;
+        MEM[61]=16'd7;
+        MEM[62]=16'd25;
 
 
         //inc i
-        MEM[62]=INC;
-        MEM[63]=16'd1;
-        MEM[64]=16'd8;
+        MEM[63]=INC;
+        MEM[64]=16'd1;
+        MEM[65]=16'd8;
 
         //move k_ref to r
-        MEM[65]=MOVE;
-        MEM[66]=16'd15;
-        MEM[67]=16'd17;
+        MEM[66]=MOVE;
+        MEM[67]=16'd15;
+        MEM[68]=16'd17;
 
         //move k to ac
-        MEM[68]=MOVE;
-        MEM[69]=16'd14;
-        MEM[70]=16'd20;
+        MEM[69]=MOVE;
+        MEM[70]=16'd14;
+        MEM[71]=16'd20;
 
         //ac = ac -r
-        MEM[71]=SUB;
+        MEM[72]=SUB;
 
         //k <- ac
-        MEM[72]=MOVE;
-        MEM[73]=16'd20;
-        MEM[74]=16'd14;
+        MEM[73]=MOVE;
+        MEM[74]=16'd20;
+        MEM[75]=16'd14;
 
-        MEM[75]=JUMP;
-        MEM[76]=16'd3;
-        MEM[77]=16'd24;
+        MEM[76]=JUMP;
+        MEM[77]=16'd3;
+        MEM[78]=16'd25;
 
-        MEM[78]=END;
+        MEM[79]=END;
+
 
 
 
 
 
     end
-always @(posedge clk) begin
-if (write == 1)
-MEM[address] <= instr_in[7:0];
-
-instr_out <= MEM[address];
-end
+always @(posedge clk) 
+begin
+                if (write[0:0] == 1)
+                begin
+                    MEM[address[15:0]] <= instr_in[15:0];
+                end
+                if (write[1:1] == 1)
+                begin
+                    MEM[address[31:16]] <= instr_in[31:16];
+                end
+                if (write[2:2] == 1)
+                begin
+                    MEM[address[47:32]] <= instr_in[47:32];
+                end
+                if (write[3:3] == 1)
+                begin
+                    MEM[address[63:48]] <= instr_in[63:48];
+                end
+                instr_out[15:0] <= MEM[address[15:0]];
+                instr_out[31:16] <= MEM[address[31:16]];
+                instr_out[47:32] <= MEM[address[47:32]];
+                instr_out[63:48] <= MEM[address[63:48]];
+                
+            end
 
 endmodule
