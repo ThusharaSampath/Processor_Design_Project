@@ -155,7 +155,7 @@ MEM[63] = STORM;
 
 //Comment:- inc 3 k
 MEM[64] = INC;
-MEM[65] = 16'd3;
+MEM[65] = 16'd4;
 MEM[66] = 16'd14;
 
 //Comment:- jump nk_flag TAG5

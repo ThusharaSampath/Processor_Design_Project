@@ -6,7 +6,7 @@ module ProcessorTB;
     wire [15:0]AC;
     wire [15:0]BUS;
     wire [7:0]current_micro_instruction;
-    wire [0:0]finish;
+    wire [3:0]finish;
     parameter clk_period = 10;
     Processor Processor(clk,R,MDDR,AC,BUS,current_micro_instruction,finish);
 
@@ -19,8 +19,7 @@ module ProcessorTB;
     begin
         #(clk_period/2)
         clk = ~clk;
-        $display("finish:%d",finish);
-        if(finish==1'd1) $stop;
-        
+        $display("finish:%b",finish);
+        if(finish==4'b1111) $stop;
     end
 endmodule

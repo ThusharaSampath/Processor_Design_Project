@@ -8,7 +8,7 @@ input clk,
     output reg [15:0]test3,
     output reg [15:0]test4,
     output reg [7:0]current_micro_instruction,
-    output reg [0:0]finish
+    output reg [3:0]finish
     );
     wire [7:0]current_micro_instruction_wire;
     wire [3:0]en_from_cpu_to_IM;
@@ -22,7 +22,7 @@ input clk,
     wire [15:0]test2_wire;
     wire [15:0]test3_wire;
     wire [15:0]test4_wire;
-    wire [0:0]finish_wire;
+    wire [3:0]finish_wire;
     parameter proId0 =16'd0 ;
     parameter proId1 =16'd1 ;
 
@@ -48,7 +48,7 @@ input clk,
         .DM_en(en_from_cpu_to_DM[0:0]),
         .IM_en(en_from_cpu_to_IM[0:0]),
         .AR_out(data_from_AR_to_M[15:0]),
-        .finish(finish_wire),
+        .finish(finish_wire[0:0]),
         .test(test_wire),
         .test2(test2_wire),
         .test3(test3_wire),
@@ -66,7 +66,7 @@ input clk,
         .DM_en(en_from_cpu_to_DM[1:1]),
         .IM_en(en_from_cpu_to_IM[1:1]),
         .AR_out(data_from_AR_to_M[31:16]),
-        .finish(finish_wire),
+        .finish(finish_wire[1:1]),
         .test(),
         .test2(),
         .test3(),
@@ -84,7 +84,7 @@ input clk,
         .DM_en(en_from_cpu_to_DM[2:2]),
         .IM_en(en_from_cpu_to_IM[2:2]),
         .AR_out(data_from_AR_to_M[47:32]),
-        .finish(finish_wire),
+        .finish(finish_wire[2:2]),
         .test(),
         .test2(),
         .test3(),
@@ -92,23 +92,23 @@ input clk,
         .current_micro_instruction()
         );
 
-        // topProcessor core4 (
-        // .clk(clk),
-        // .DM_out(data_from_DM_to_cpu[63:48]),
-        // .IM_out(data_from_IM_to_cpu[63:48]),
-        // .proId(16'd3),
-        // .IM_in(data_from_cpu_to_IM[63:48]),     
-        // .DM_in(data_from_cpu_to_DM[63:48]),    
-        // .DM_en(en_from_cpu_to_DM[3:3]),
-        // .IM_en(en_from_cpu_to_IM[3:3]),
-        // .AR_out(data_from_AR_to_M[63:48]),
-        // .finish(finish_wire),
-        // .test(),
-        // .test2(),
-        // .test3(),
-        // .test4(),
-        // .current_micro_instruction()
-        // );
+        topProcessor core4 (
+        .clk(clk),
+        .DM_out(data_from_DM_to_cpu[63:48]),
+        .IM_out(data_from_IM_to_cpu[63:48]),
+        .proId(16'd3),
+        .IM_in(data_from_cpu_to_IM[63:48]),     
+        .DM_in(data_from_cpu_to_DM[63:48]),    
+        .DM_en(en_from_cpu_to_DM[3:3]),
+        .IM_en(en_from_cpu_to_IM[3:3]),
+        .AR_out(data_from_AR_to_M[63:48]),
+        .finish(finish_wire[3:3]),
+        .test(),
+        .test2(),
+        .test3(),
+        .test4(),
+        .current_micro_instruction()
+        );
 
 
 

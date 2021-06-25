@@ -127,7 +127,7 @@ RW_Select = 1'd0;
 NS = instruction[7:0];
 end
 END: begin
-NS = NOP;
+NS = END;
 end
 CLR1: begin
 to_ALU = 4'd0;
