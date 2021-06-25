@@ -1,0 +1,42 @@
+load 0 BASE_A
+load 1 BASE_B
+load 2 BASE_C
+load 3 i_ref
+load 4 j_ref
+load 15 k_ref
+clr i 
+move PRO_ID k
+
+:TAG6
+jump i_flag TAG1
+    :TAG5
+    jump k_flag TAG2
+        clr P
+        clr j
+        :TAG4
+        jump j_flag TAG3
+            loadm MAT_A
+            move AC R 
+            loadm MAT_B
+            mul 
+            move AC R 
+            move P AC 
+            add
+            move AC P 
+            inc 1 j
+        jump nj_flag TAG4
+        :TAG3
+        move P AC 
+        storm
+        inc 3 k
+    jump nk_flag TAG5
+    :TAG2
+    inc 1 i
+    move k_ref R
+    move k AC
+    sub
+    move AC k
+jump ni_flag TAG6
+:TAG1
+end
+

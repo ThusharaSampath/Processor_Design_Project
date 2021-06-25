@@ -26,144 +26,179 @@ module IRAM(
    
     
     initial begin
-
-        //loading
-
-        //load base a
-        //load base b
-        //load i_ref
-        //load j_ref
-        //load k_ref
-
-        MEM[0]=LOAD;
-        MEM[1]=16'd0;
-        MEM[2]=16'd10; //mat_a
-        MEM[3]=LOAD;
-        MEM[4]=16'd1;
-        MEM[5]=16'd13; //mat_a
-
-        MEM[6]=LOAD;
-        MEM[7]=16'd2;
-        MEM[8]=16'd7; //base
-
-        MEM[9]=LOAD;
-        MEM[10]=16'd3;
-        MEM[11]=16'd9; //i_ref
-        MEM[12]=LOAD;
-        MEM[13]=16'd4;
-        MEM[14]=16'd12; //j_ref
-        MEM[15]=LOAD;
-        MEM[16]=16'd15; //address in d-memory
-        MEM[17]=16'd15; //k_ref
-
-        //clear i,j,k
-        MEM[18]=CLR;
-        MEM[19]=16'd8;
-        MEM[20]=CLR;
-        MEM[21]=16'd11;
-        MEM[22]=MOVE;
-        MEM[23]=16'd23;
-        MEM[24]=16'd14;
-
-
-
-        MEM[25]=CLR;
-        MEM[26]=16'd16;
-
-
-        //load first number of matrix a to AC
-        MEM[27]=LOADM;
-        MEM[28]=16'd21;
-
-        //move ac to r
-        MEM[29]=MOVE;
-        MEM[30]=16'd20;
-        MEM[31]=16'd17;
-
-        //load first number of matrix b to AC
-        MEM[32]=LOADM;
-        MEM[33]=16'd22;
         
-        MEM[34]=MUL;
+//Comment:- load 0 BASE_A
+MEM[0] = LOAD;
+MEM[1] = 16'd0;
+MEM[2] = 16'd10;
 
-        //move ac to r
-        MEM[35]=MOVE;
-        MEM[36]=16'd20;
-        MEM[37]=16'd17;
+//Comment:- load 1 BASE_B
+MEM[3] = LOAD;
+MEM[4] = 16'd1;
+MEM[5] = 16'd13;
 
-        //move p to ac
-        MEM[38]=MOVE;
-        MEM[39]=16'd16;
-        MEM[40]=16'd20;
+//Comment:- load 2 BASE_C
+MEM[6] = LOAD;
+MEM[7] = 16'd2;
+MEM[8] = 16'd7;
 
-        MEM[41]=ADD;
+//Comment:- load 3 i_ref
+MEM[9] = LOAD;
+MEM[10] = 16'd3;
+MEM[11] = 16'd9;
 
-        //move ac to p
-        MEM[42]=MOVE;
-        MEM[43]=16'd20;
-        MEM[44]=16'd16;
+//Comment:- load 4 j_ref
+MEM[12] = LOAD;
+MEM[13] = 16'd4;
+MEM[14] = 16'd12;
 
-        //inc j
-        MEM[45]=INC;
-        MEM[46]=16'd1;
-        MEM[47]=16'd11;
+//Comment:- load 15 k_ref
+MEM[15] = LOAD;
+MEM[16] = 16'd15;
+MEM[17] = 16'd15;
 
-        MEM[48]=JUMP;
-        MEM[49]=16'd5;
-        MEM[50]=16'd27;
+//Comment:- clr i
+MEM[18] = CLR;
+MEM[19] = 16'd8;
 
-        //move p to ac
-        MEM[51]=MOVE;
-        MEM[52]=16'd16;
-        MEM[53]=16'd20;
+//Comment:- move PRO_ID k
+MEM[20] = MOVE;
+MEM[21] = 16'd23;
+MEM[22] = 16'd14;
 
-        //store m
-        MEM[54]=STORM;
+//Comment:- :TAG6
+//TAG6
 
+//Comment:- jump i_flag TAG1
+MEM[23] = JUMP;
+MEM[24] = 16'd2;
+MEM[25] = 16'd86;
 
-        //inc k
-        MEM[55]=INC;
-        MEM[56]=16'd3;
-        MEM[57]=16'd14;
+//Comment:- :TAG5
+//TAG5
 
-        MEM[58]=CLR;
-        MEM[59]=16'd11; //ckear j
+//Comment:- jump k_flag TAG2
+MEM[26] = JUMP;
+MEM[27] = 16'd6;
+MEM[28] = 16'd70;
 
+//Comment:- clr P
+MEM[29] = CLR;
+MEM[30] = 16'd16;
 
-        MEM[60]=JUMP;
-        MEM[61]=16'd7;
-        MEM[62]=16'd25;
+//Comment:- clr j
+MEM[31] = CLR;
+MEM[32] = 16'd11;
 
+//Comment:- :TAG4
+//TAG4
 
-        //inc i
-        MEM[63]=INC;
-        MEM[64]=16'd1;
-        MEM[65]=16'd8;
+//Comment:- jump j_flag TAG3
+MEM[33] = JUMP;
+MEM[34] = 16'd4;
+MEM[35] = 16'd60;
 
-        //move k_ref to r
-        MEM[66]=MOVE;
-        MEM[67]=16'd15;
-        MEM[68]=16'd17;
+//Comment:- loadm MAT_A
+MEM[36] = LOADM;
+MEM[37] = 16'd21;
 
-        //move k to ac
-        MEM[69]=MOVE;
-        MEM[70]=16'd14;
-        MEM[71]=16'd20;
+//Comment:- move AC R
+MEM[38] = MOVE;
+MEM[39] = 16'd20;
+MEM[40] = 16'd17;
 
-        //ac = ac -r
-        MEM[72]=SUB;
+//Comment:- loadm MAT_B
+MEM[41] = LOADM;
+MEM[42] = 16'd22;
 
-        //k <- ac
-        MEM[73]=MOVE;
-        MEM[74]=16'd20;
-        MEM[75]=16'd14;
+//Comment:- mul
+MEM[43] = MUL;
 
-        MEM[76]=JUMP;
-        MEM[77]=16'd3;
-        MEM[78]=16'd25;
+//Comment:- move AC R
+MEM[44] = MOVE;
+MEM[45] = 16'd20;
+MEM[46] = 16'd17;
 
-        MEM[79]=END;
+//Comment:- move P AC
+MEM[47] = MOVE;
+MEM[48] = 16'd16;
+MEM[49] = 16'd20;
 
+//Comment:- add
+MEM[50] = ADD;
+
+//Comment:- move AC P
+MEM[51] = MOVE;
+MEM[52] = 16'd20;
+MEM[53] = 16'd16;
+
+//Comment:- inc 1 j
+MEM[54] = INC;
+MEM[55] = 16'd1;
+MEM[56] = 16'd11;
+
+//Comment:- jump nj_flag TAG4
+MEM[57] = JUMP;
+MEM[58] = 16'd5;
+MEM[59] = 16'd33;
+
+//Comment:- :TAG3
+//TAG3
+
+//Comment:- move P AC
+MEM[60] = MOVE;
+MEM[61] = 16'd16;
+MEM[62] = 16'd20;
+
+//Comment:- storm
+MEM[63] = STORM;
+
+//Comment:- inc 3 k
+MEM[64] = INC;
+MEM[65] = 16'd3;
+MEM[66] = 16'd14;
+
+//Comment:- jump nk_flag TAG5
+MEM[67] = JUMP;
+MEM[68] = 16'd7;
+MEM[69] = 16'd26;
+
+//Comment:- :TAG2
+//TAG2
+
+//Comment:- inc 1 i
+MEM[70] = INC;
+MEM[71] = 16'd1;
+MEM[72] = 16'd8;
+
+//Comment:- move k_ref R
+MEM[73] = MOVE;
+MEM[74] = 16'd15;
+MEM[75] = 16'd17;
+
+//Comment:- move k AC
+MEM[76] = MOVE;
+MEM[77] = 16'd14;
+MEM[78] = 16'd20;
+
+//Comment:- sub
+MEM[79] = SUB;
+
+//Comment:- move AC k
+MEM[80] = MOVE;
+MEM[81] = 16'd20;
+MEM[82] = 16'd14;
+
+//Comment:- jump ni_flag TAG6
+MEM[83] = JUMP;
+MEM[84] = 16'd3;
+MEM[85] = 16'd23;
+
+//Comment:- :TAG1
+//TAG1
+
+//Comment:- end
+MEM[86] = END;
 
 
 
