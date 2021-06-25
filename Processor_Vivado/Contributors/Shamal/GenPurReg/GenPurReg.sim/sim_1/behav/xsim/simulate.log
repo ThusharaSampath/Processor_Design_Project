@@ -19594,4 +19594,37 @@ out :-     0 z:- 1
 out :-     1 z:- 0
 out :-     2 z:- 0
 AR:-    86 , I:-     3, I_ref:-     3, J:-     3, J_ref:-     3, base_A:     5, K:-     3, K_ref:-     3,base_B:    16, P:-   186, MAT_A:-    17, MAT_B:-    28, MAT_C:-    37
-AR:-    86 , I:-     3, I_ref:-     3, J:-     3, J_ref:-     3, base_A:     5, K:-     3, K_ref:-     3,base_B:    16, P:-   186, MAT_A:-    17, MAT_B:
+AR:-    86 , I:-     3, I_ref:-     3, J:-     3, J_ref:-     3, base_A:     5, K:-     3, K_ref:-     3,base_B:    16, P:-   186, MAT_A:-    17, MAT_B:-    28, MAT_C:-    37
+finish:1110
+current instruction:  1 MDDR:-     3
+AR:-    86 , I:-     3, I_ref:-     3, J:-     3, J_ref:-     3, base_A:     5, K:-     3, K_ref:-     3,base_B:    16, P:-   186, MAT_A:-    17, MAT_B:-    28, MAT_C:-    37
+finish:1110
+out :-     3 z:- 0
+out :-     0 z:- 1
+out :-     1 z:- 0
+out :-     2 z:- 0
+AR:-    87 , I:-     3, I_ref:-     3, J:-     3, J_ref:-     3, base_A:     5, K:-     3, K_ref:-     3,base_B:    16, P:-   186, MAT_A:-    17, MAT_B:-    28, MAT_C:-    37
+finish:1110
+current instruction:  2 MDDR:-     4
+AR:-    87 , I:-     3, I_ref:-     3, J:-     3, J_ref:-     3, base_A:     5, K:-     3, K_ref:-     3,base_B:    16, P:-   186, MAT_A:-    17, MAT_B:-    28, MAT_C:-    37
+AR:-    87 , I:-     3, I_ref:-     3, J:-     3, J_ref:-     3, base_A:     5, K:-     3, K_ref:-     3,base_B:    16, P:-   186, MAT_A:-    17, MAT_B:-    28, MAT_C:-    37
+finish:1110
+out :-     3 z:- 0
+out :-     0 z:- 1
+out :-     1 z:- 0
+out :-     2 z:- 0
+current instruction:  2 MDDR:-     4
+finish:1110
+current instruction:  4 MDDR:-     4
+AR:-    87 , I:-     3, I_ref:-     3, J:-     3, J_ref:-     3, base_A:     5, K:-     3, K_ref:-     3,base_B:    16, P:-   186, MAT_A:-    17, MAT_B:-    28, MAT_C:-    37
+finish:1110
+out :-     3 z:- 0
+out :-     0 z:- 1
+out :-     1 z:- 0
+out :-     2 z:- 0
+finish:1110
+AR:-    87 , I:-     3, I_ref:-     3, J:-     3, J_ref:-     3, base_A:     5, K:-     3, K_ref:-     3,base_B:    16, P:-   186, MAT_A:-    17, MAT_B:-    28, MAT_C:-    37
+finish
+AR:-    87 , I:-     3, I_ref:-     3, J:-     3, J_ref:-     3, base_A:     5, K:-     3, K_ref:-     3,base_B:    16, P:-   186, MAT_A:-    17, MAT_B:-    28, MAT_C:-    37
+finish:1111
+$stop called at time : 10490 ns : File "E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.srcs/sources_1/new/ProcessorTB.v" Line 23
