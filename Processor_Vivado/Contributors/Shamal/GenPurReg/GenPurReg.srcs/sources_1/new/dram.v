@@ -4,7 +4,7 @@ module dram(
     input [63:0] address ,
     input [63:0] data_in ,
     output reg [63:0] data_out);
-    reg [15:0] MEM [65535:0];
+    reg [15:0] MEM [1000:0];
 
     initial begin
         MEM[0]=16'd5; //mat_a_base
