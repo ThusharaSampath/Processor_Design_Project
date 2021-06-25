@@ -2521,3 +2521,4 @@ dismissDialog("Run Simulation"); // e (cl)
 // TclEventType: SIMULATION_UPDATE_STACKS
 // TclEventType: SIMULATION_UPDATE_OBJECT_TREE
 // TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// HMemoryUtils.trashcanNow. Engine heap size: 752 MB. GUI used memory: 126 MB. Current time: 6/24/21, 4:32:58 PM IST
