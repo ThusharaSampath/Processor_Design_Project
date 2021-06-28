@@ -1,7 +1,7 @@
 module main_alu ( input clk,
                   input [15:0] bus_in,
                   input [15:0] ac_in,
-                  input [2:0] op_code,
+                  input [3:0] op_code,
                   output reg [15:0] out,
                   output reg [0:0] zflag =1'd0
                   );

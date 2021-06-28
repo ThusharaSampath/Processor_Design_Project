@@ -22,3 +22,23 @@ loop i
     i = i+1
     k=k - k_ref
     jump according to i_flag
+
+mehemai oka hariyn 
+n
+a
+
+
+while(){
+
+
+    hdaksj
+    afd
+    
+}
+
+
+
+TAG1
+load 2 5
+load 3 6
+jump TAG1
