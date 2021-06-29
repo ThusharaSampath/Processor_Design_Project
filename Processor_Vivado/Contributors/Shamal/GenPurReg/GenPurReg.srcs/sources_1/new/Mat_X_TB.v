@@ -6,7 +6,7 @@ module Mat_X_TB;
     reg [15:0] Y;
     wire [15:0] Mat_data_out;
     parameter clk_period = 10;
-    Mat_X matx (clk,X_Ref,X,Base,Y,Mat_data_out);
+    MAT_X MAT_X (clk,X_Ref,X,Base,Y,Mat_data_out);
  initial 
         begin
             clk = 0; 

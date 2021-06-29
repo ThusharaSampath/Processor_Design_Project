@@ -1,4 +1,4 @@
-module decoder(
+module DECODER(
     input clk,
     input [5:0] from_cu,
     input [5:0] from_selector,

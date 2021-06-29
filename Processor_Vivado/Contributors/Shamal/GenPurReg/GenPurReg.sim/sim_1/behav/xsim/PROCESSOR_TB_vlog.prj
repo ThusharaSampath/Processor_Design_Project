@@ -1,0 +1,24 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../GenPurReg.srcs/sources_1/new/AC.v" \
+"../../../../GenPurReg.srcs/sources_1/new/BUS_MULTIPLEXER.v" \
+"../../../../GenPurReg.srcs/sources_1/new/CONTROL_UNIT.v" \
+"../../../../GenPurReg.srcs/sources_1/new/CORE.v" \
+"../../../../GenPurReg.srcs/sources_1/new/GENERAL_PURPOSE_REGISTER.v" \
+"../../../../GenPurReg.srcs/sources_1/new/MAT_X.v" \
+"../../../../GenPurReg.srcs/sources_1/new/PC.v" \
+"../../../../GenPurReg.srcs/sources_1/new/PROCESSOR.v" \
+"../../../../GenPurReg.srcs/sources_1/new/REGISTER_SELECTOR.v" \
+"../../../../GenPurReg.srcs/sources_1/new/REG_X.v" \
+"../../../../GenPurReg.srcs/sources_1/new/DECODER.v" \
+"../../../../GenPurReg.srcs/sources_1/new/DRAM.v" \
+"../../../../GenPurReg.srcs/sources_1/new/IRAM.v" \
+"../../../../GenPurReg.srcs/sources_1/new/MAIN_ALU.v" \
+"../../../../GenPurReg.srcs/sources_1/new/MDDR.v" \
+"../../../../GenPurReg.srcs/sources_1/new/PROCESSOR_TB.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

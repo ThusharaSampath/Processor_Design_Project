@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module ac_tb;
+module AC_TB;
     reg clk;
     reg writealu;
     reg readalu ;
@@ -13,7 +13,7 @@ module ac_tb;
 
     parameter clk_period =10;
 
-    ac ac (clk,writealu,readalu,readbus,rstac,incac,data_inalu,data_out_alu,data_out_bus,data_store);
+    AC AC (clk,writealu,readalu,readbus,rstac,incac,data_inalu,data_out_alu,data_out_bus,data_store);
 
     initial 
     begin

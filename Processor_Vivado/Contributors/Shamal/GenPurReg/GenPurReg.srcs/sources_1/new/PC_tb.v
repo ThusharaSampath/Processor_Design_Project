@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module PC_tb;
+module PC_TB;
     reg clk,write,incpc,read;
     reg [15:0] data_in;
     wire [15:0] data_out;

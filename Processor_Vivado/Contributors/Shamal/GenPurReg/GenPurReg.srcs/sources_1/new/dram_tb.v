@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module dram_tb;
+module DRAM_TB;
     reg clk,write;
     reg [15:0] data_in;
     reg [15:0] address;
@@ -8,7 +8,7 @@ module dram_tb;
         
     parameter clk_period = 10;
      
-    dram dram (clk,write,address,data_in,data_out);
+    DRAM DRAM (clk,write,address,data_in,data_out);
      initial 
     begin
        clk = 0; 

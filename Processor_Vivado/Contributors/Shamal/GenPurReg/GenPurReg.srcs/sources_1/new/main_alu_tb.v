@@ -2,7 +2,7 @@
 
 
 
-module main_alu_tb;
+module MAIN_ALU_TB;
     reg clk;
     reg [15:0] bus_in;
     reg [15:0] ac_in;
@@ -11,7 +11,7 @@ module main_alu_tb;
     wire zflag;
     parameter clk_period = 10;
        
-    main_alu alu (clk,bus_in,ac_in,op_code,out,zflag);
+    MAIN_ALU ALU (clk,bus_in,ac_in,op_code,out,zflag);
        
     initial 
         begin

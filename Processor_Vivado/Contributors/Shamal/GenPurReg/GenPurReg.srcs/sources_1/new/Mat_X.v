@@ -1,5 +1,5 @@
-//X colum Y ROw
-module Mat_X
+//X colum Y row meka kle Shamal
+module MAT_X
     (input clk,
     input [15:0] X_Ref, 
     input [15:0] X,

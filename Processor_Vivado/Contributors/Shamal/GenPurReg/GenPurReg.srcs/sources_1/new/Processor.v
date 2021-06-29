@@ -1,16 +1,22 @@
 `timescale 1ns / 1ps
 
-module Processor(
+module PROCESSOR(
 
 input clk,
-    output reg [15:0]test,
-    output reg [15:0]test2,
-    output reg [15:0]test3,
-    output reg [15:0]test4,
-    output reg [7:0]current_micro_instruction,
+    output reg [15:0]bus_core1,
+    output reg [7:0]current_micro_instruction_core1,
+    output reg [15:0]bus_core2,
+    output reg [7:0]current_micro_instruction_core2,
+    output reg [15:0]bus_core3,
+    output reg [7:0]current_micro_instruction_core3,
+    output reg [15:0]bus_core4,
+    output reg [7:0]current_micro_instruction_core4,
     output reg [3:0]finish
     );
-    wire [7:0]current_micro_instruction_wire;
+    wire [7:0]current_micro_instruction_wire_core1;
+    wire [7:0]current_micro_instruction_wire_core2;
+    wire [7:0]current_micro_instruction_wire_core3;
+    wire [7:0]current_micro_instruction_wire_core4;
     wire [3:0]en_from_cpu_to_IM;
     wire [3:0]en_from_cpu_to_DM;
     wire [63:0]data_from_cpu_to_IM;
@@ -18,10 +24,10 @@ input clk,
     wire [63:0]data_from_IM_to_cpu;
     wire [63:0]data_from_DM_to_cpu;
     wire [63:0]data_from_AR_to_M;
-    wire [15:0]test_wire;
-    wire [15:0]test2_wire;
-    wire [15:0]test3_wire;
-    wire [15:0]test4_wire;
+    wire [15:0]bus_wire_core1;
+    wire [15:0]bus_wire_core2;
+    wire [15:0]bus_wire_core3;
+    wire [15:0]bus_wire_core4;
     wire [3:0]finish_wire;
     parameter proId0 =16'd0 ;
     parameter proId1 =16'd1 ;
@@ -29,16 +35,20 @@ input clk,
     always @(*) 
     begin
         //please work!
-        current_micro_instruction<=current_micro_instruction_wire;
-        test <= test_wire;
-        test2 <= test2_wire;
-        test3 <= test3_wire;
-        test4 <= test4_wire;
+        current_micro_instruction_core1<=current_micro_instruction_wire_core1;
+        bus_core1 <= bus_wire_core1;
+        current_micro_instruction_core2<=current_micro_instruction_wire_core2;
+        bus_core2 <= bus_wire_core2;
+        current_micro_instruction_core3<=current_micro_instruction_wire_core3;
+        bus_core3 <= bus_wire_core3;
+        current_micro_instruction_core4<=current_micro_instruction_wire_core4;
+        bus_core4 <= bus_wire_core4;
+        
         finish<=finish_wire;
 
     end
 
-    topProcessor core1 (
+    CORE core1 (
         .clk(clk),
         .DM_out(data_from_DM_to_cpu[15:0]),
         .IM_out(data_from_IM_to_cpu[15:0]),
@@ -49,14 +59,11 @@ input clk,
         .IM_en(en_from_cpu_to_IM[0:0]),
         .AR_out(data_from_AR_to_M[15:0]),
         .finish(finish_wire[0:0]),
-        .test(test_wire),
-        .test2(test2_wire),
-        .test3(test3_wire),
-        .test4(test4_wire),
-        .current_micro_instruction(current_micro_instruction_wire)
+        .bus(bus_wire_core1),
+        .current_micro_instruction(current_micro_instruction_wire_core1)
         );
 
-    topProcessor core2 (
+    CORE core2 (
         .clk(clk),
         .DM_out(data_from_DM_to_cpu[31:16]),
         .IM_out(data_from_IM_to_cpu[31:16]),
@@ -67,14 +74,11 @@ input clk,
         .IM_en(en_from_cpu_to_IM[1:1]),
         .AR_out(data_from_AR_to_M[31:16]),
         .finish(finish_wire[1:1]),
-        .test(),
-        .test2(),
-        .test3(),
-        .test4(),
-        .current_micro_instruction()
+        .bus(bus_wire_core2),
+        .current_micro_instruction(current_micro_instruction_wire_core2)
         );
 
-        topProcessor core3 (
+        CORE core3 (
         .clk(clk),
         .DM_out(data_from_DM_to_cpu[47:32]),
         .IM_out(data_from_IM_to_cpu[47:32]),
@@ -85,14 +89,11 @@ input clk,
         .IM_en(en_from_cpu_to_IM[2:2]),
         .AR_out(data_from_AR_to_M[47:32]),
         .finish(finish_wire[2:2]),
-        .test(),
-        .test2(),
-        .test3(),
-        .test4(),
-        .current_micro_instruction()
+        .bus(bus_wire_core3),
+        .current_micro_instruction(current_micro_instruction_wire_core3)
         );
 
-        topProcessor core4 (
+        CORE core4 (
         .clk(clk),
         .DM_out(data_from_DM_to_cpu[63:48]),
         .IM_out(data_from_IM_to_cpu[63:48]),
@@ -103,11 +104,8 @@ input clk,
         .IM_en(en_from_cpu_to_IM[3:3]),
         .AR_out(data_from_AR_to_M[63:48]),
         .finish(finish_wire[3:3]),
-        .test(),
-        .test2(),
-        .test3(),
-        .test4(),
-        .current_micro_instruction()
+        .bus(bus_wire_core4),
+        .current_micro_instruction(current_micro_instruction_wire_core4)
         );
 
 
@@ -121,7 +119,7 @@ input clk,
 
     );
 
-    dram DRAM (
+    DRAM DRAM (
         .clk(clk),
         .write(en_from_cpu_to_DM),
         .address(data_from_AR_to_M),
