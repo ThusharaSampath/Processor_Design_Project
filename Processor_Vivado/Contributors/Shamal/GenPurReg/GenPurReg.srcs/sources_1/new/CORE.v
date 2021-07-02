@@ -95,12 +95,11 @@ module CORE(
      MAT_X MAT_A (.clk(clk), .X_Ref(j_ref_wire), .X(wire_registers_busMultiplexer[5]), .Base(Base_A_wire),
       .Y(wire_registers_busMultiplexer[4]),.Mat_data_out(wire_registers_busMultiplexer[10]));
       
-     MAT_X MAT_B (.clk(clk), .X_Ref(k_ref_wire), .X(wire_registers_busMultiplexer[5]), .Base(Base_B_wire),
-      .Y(wire_registers_busMultiplexer[6]),.Mat_data_out(wire_registers_busMultiplexer[11]));
+     MAT_X MAT_B (.clk(clk), .X_Ref(k_ref_wire), .X(wire_registers_busMultiplexer[6]), .Base(Base_B_wire),
+      .Y(wire_registers_busMultiplexer[5]),.Mat_data_out(wire_registers_busMultiplexer[11]));
 
-
-     MAT_X MAT_C (.clk(clk), .X_Ref(j_ref_wire), .X(wire_registers_busMultiplexer[4]), .Base(Base_C_wire),
-      .Y(wire_registers_busMultiplexer[6]),.Mat_data_out(wire_registers_busMultiplexer[3]));
+     MAT_X MAT_C (.clk(clk), .X_Ref(k_ref_wire), .X(wire_registers_busMultiplexer[6]), .Base(Base_C_wire),
+      .Y(wire_registers_busMultiplexer[4]),.Mat_data_out(wire_registers_busMultiplexer[3]));
 
       
      GENERAL_PURPOSE_REGISTER P (.clk(clk), .write(wire_decoder_registers[15]), .data_in(bus_wire),

@@ -2,54 +2,44 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Fri Jun 25 14:38:11 2021
-# Process ID: 55300
+# Start of session at: Fri Jul  2 13:10:31 2021
+# Process ID: 63064
 # Current directory: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent36052 E:\Acedemic\sem 5\Processor_Design_Project\Processor_Vivado\Contributors\Shamal\GenPurReg\GenPurReg.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8032 E:\Acedemic\sem 5\Processor_Design_Project\Processor_Vivado\Contributors\Shamal\GenPurReg\GenPurReg.xpr
 # Log file: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/vivado.log
 # Journal file: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project {E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.xpr}
 update_compile_order -fileset sources_1
-launch_simulation
-source ProcessorTB.tcl
-close_sim
-launch_simulation
-source ProcessorTB.tcl
-close_sim
-launch_simulation
-source ProcessorTB.tcl
-close_sim
-launch_simulation
-source ProcessorTB.tcl
-close_sim
-launch_simulation
-source ProcessorTB.tcl
-close_sim
-launch_simulation
-source ProcessorTB.tcl
-close_sim
-launch_simulation
-source ProcessorTB.tcl
-close_sim
-launch_simulation
-source ProcessorTB.tcl
-close_sim
-launch_simulation
-source ProcessorTB.tcl
-close_sim
-launch_simulation
-source ProcessorTB.tcl
-close_sim
-launch_simulation
-source ProcessorTB.tcl
-close_sim
-launch_simulation
-source ProcessorTB.tcl
 synth_design -rtl -name rtl_1
+close_design
+launch_simulation
+source PROCESSOR_TB.tcl
 close_sim
 launch_simulation
-source ProcessorTB.tcl
-synth_design -rtl -name rtl_1
+source PROCESSOR_TB.tcl
 close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
