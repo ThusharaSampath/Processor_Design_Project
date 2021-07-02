@@ -43,3 +43,4 @@ source PROCESSOR_TB.tcl
 close_sim
 launch_simulation
 source PROCESSOR_TB.tcl
+close_sim
