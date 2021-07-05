@@ -11,7 +11,7 @@ module MAIN_ALU ( input clk,
                          case (op_code)
                             4'b0000: {zflag,out}= {zflag,out};
                             4'b0001: {zflag,out}= data_bus_alu;
-                            4'b0010: {zflag,out}= data_bus_alu + data_ac_alu;
+                            4'b0010: {zflag,out}= data_ac_alu + data_bus_alu;
                             4'b0011: {zflag,out}= data_ac_alu - data_bus_alu;
                             4'b0100: {zflag,out}= data_ac_alu * data_bus_alu;
                             4'b0101: {zflag,out}= data_ac_alu & data_bus_alu;
