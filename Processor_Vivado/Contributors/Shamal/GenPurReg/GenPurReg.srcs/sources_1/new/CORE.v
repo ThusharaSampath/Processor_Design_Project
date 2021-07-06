@@ -1,10 +1,10 @@
 module CORE(
     input clk,
-    input  [15:0]DM_out,//from data mem to proc(MDDR)
-    input  [15:0]IM_out,
+    input  [15:0]data_DM_core,//from data mem to proc(MDDR)
+    input  [15:0]data_IM_core,
     input  [15:0]proId,
-    output reg [15:0]IM_in,
-    output reg [15:0]DM_in,//from processor(MDDR) to data mem (data)
+    output reg [15:0]data_core_IM,
+    output reg [15:0]data_core_DM,//from processor(MDDR) to data mem (data)
     output reg [0:0]DM_en,//from processor to data mem (control signal)
     output reg [0:0]IM_en,
     output reg [15:0]AR_out,  
@@ -44,8 +44,8 @@ module CORE(
     wire [0:0] rw_register_selector;//from cu - read/wrie select 
     wire [0:0] finish_wire;//from cu - read/wrie select 
 
-    assign wire_iram_mddr = IM_out;
-    assign wire_dram_mddr = DM_out;
+    assign wire_iram_mddr = data_IM_core;
+    assign wire_dram_mddr = data_DM_core;
         
     always@(*)
      begin
@@ -54,8 +54,8 @@ module CORE(
         IM_en <= to_IM;
         DM_en <= to_DM;
         AR_out <= wire_registers_busMultiplexer[0];
-        IM_in <= wire_registers_busMultiplexer[2];
-        DM_in <= wire_registers_busMultiplexer[2];
+        data_core_IM <= wire_registers_busMultiplexer[2];
+        data_core_DM <= wire_registers_busMultiplexer[2];
         finish <= finish_wire ;
         if(finish==1'd1) $display("finish");
         //$display("AR:- %d , I:- %d, I_ref:- %d, J:- %d, J_ref:- %d, base_A: %d, K:- %d, K_ref:- %d,base_B: %d, P:- %d, MAT_A:- %d, MAT_B:- %d, MAT_C:- %d" ,wire_registers_busMultiplexer[0],wire_registers_busMultiplexer[4],i_ref_wire,wire_registers_busMultiplexer[5],j_ref_wire,Base_A_wire,wire_registers_busMultiplexer[6],k_ref_wire,Base_B_wire,wire_registers_busMultiplexer[7],wire_registers_busMultiplexer[10],wire_registers_busMultiplexer[11],wire_registers_busMultiplexer[3]);
@@ -169,7 +169,7 @@ module CORE(
         .to_ALU(opcode_wire),
         .to_DM(to_DM),
         .to_IM(to_IM),
-        .to_REG(wire_cu_decoder),
+        .to_RegSelector(wire_cu_decoder),
         .to_BUS(bus_selector_from_cu),
         .to_PC(PC_inc_wire),
         .to_AC(ac_cu_wire),

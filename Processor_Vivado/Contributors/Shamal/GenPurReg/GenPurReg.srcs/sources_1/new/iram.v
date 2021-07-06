@@ -16,12 +16,12 @@ module IRAM(
     parameter INC = 8'd21;
     parameter INCAC = 8'd27;
     parameter JUMP = 8'd28;
-    parameter MOVE = 8'd33;
-    parameter ADD = 8'd38;
-    parameter SUB = 8'd39;
-    parameter MUL = 8'd40;
-    parameter AND = 8'd41;
-    parameter OR = 8'd42;
+    parameter MOVE = 8'd34;
+    parameter ADD = 8'd39;
+    parameter SUB = 8'd40;
+    parameter MUL = 8'd41;
+    parameter AND = 8'd42;
+    parameter OR = 8'd43;
     parameter STORM = 8'd44;
    
     
@@ -54,7 +54,7 @@ MEM[14] = 16'd12;
 
 //Comment:- load 15 k_ref
 MEM[15] = LOAD;
-MEM[16] = 16'd406;
+MEM[16] = 16'd31;
 MEM[17] = 16'd15;
 
 //Comment:- clr i
