@@ -3,11 +3,9 @@ module PC
     input [15:0] data_in,
     output reg [15:0] data_out = 16'd0
     );
-       
-
-      always @(negedge clk)
-        begin
-            if (write) data_out <= data_in;
-            else if (incpc) data_out <= data_out + 1;
-        end
+    always @(negedge clk)
+      begin
+          if (write) data_out <= data_in;
+          else if (incpc) data_out <= data_out + 1;
+      end
 endmodule

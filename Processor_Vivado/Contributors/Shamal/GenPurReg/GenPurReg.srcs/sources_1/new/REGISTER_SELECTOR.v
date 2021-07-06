@@ -5,7 +5,6 @@ module REGISTER_SELECTOR(
     input [15:0] fromMDDR,
     output reg [5:0] toDecoder = 6'd0,
     output reg [4:0] toBus = 4'd0
-
    );
 always @(*)
     begin
@@ -26,7 +25,6 @@ always @(*)
             toDecoder = fromMDDR[5:0];
             toBus = 4'd0;
         end
-
        end
     end
 endmodule

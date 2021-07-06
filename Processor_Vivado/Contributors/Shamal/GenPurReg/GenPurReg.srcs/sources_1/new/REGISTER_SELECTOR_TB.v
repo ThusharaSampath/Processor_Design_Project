@@ -10,15 +10,15 @@ module REGISTER_SELECTOR_TB;
 
     parameter clk_period = 10;
     REGISTER_SELECTOR REGISTER_SELECTOR(clk,
-en,
-rw,
-fromMDDR,
-toDecoder,
-toBus);
+                                        en,
+                                        rw,
+                                        fromMDDR,
+                                        toDecoder,
+                                        toBus);
      initial 
-    begin
-       clk = 0; 
-    end
+        begin
+        clk = 0; 
+        end
     
     always
         #(clk_period/2)

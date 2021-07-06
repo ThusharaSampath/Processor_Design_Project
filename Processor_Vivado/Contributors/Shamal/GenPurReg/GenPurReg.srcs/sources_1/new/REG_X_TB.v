@@ -39,12 +39,5 @@ module REG_X_TB;
             #(clk_period)
             write_xref=0; read_i=1;read_iref=1;
             #(clk_period);
-            
-        
-        
-        
         end
-
-
-
 endmodule

@@ -5,7 +5,6 @@ module REG_X
     output reg [0:0] xflag,
     output reg [15:0] data_out_x,
     output reg [15:0] data_out_xref);
-    
     always @(negedge clk)
         begin  
             if (write_x) data_out_x = data_in;

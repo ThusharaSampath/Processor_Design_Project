@@ -3,9 +3,7 @@ module GENERAL_PURPOSE_REGISTER
     input [15:0] data_in,
     output reg [15:0] data_out
     );
-    
-    
-     always @(negedge clk)
+    always @(negedge clk)
         begin
             if (write) data_out <= data_in;
         end
