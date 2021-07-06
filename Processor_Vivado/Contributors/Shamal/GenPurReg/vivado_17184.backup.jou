@@ -1,0 +1,184 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Jul  5 21:19:38 2021
+# Process ID: 17184
+# Current directory: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2704 E:\Acedemic\sem 5\Processor_Design_Project\Processor_Vivado\Contributors\Shamal\GenPurReg\GenPurReg.xpr
+# Log file: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/vivado.log
+# Journal file: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.xpr}
+update_compile_order -fileset sources_1
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+run 3 us
+run 3 us
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+run 3 us
+run 3 us
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+set_property -name {xsim.simulate.runtime} -value {300us} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+set_property -name {xsim.simulate.runtime} -value {30us} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+run 3 us
+close_sim
+set_property -name {xsim.simulate.runtime} -value {150us} -objects [get_filesets sim_1]
+launch_simulation
+source PROCESSOR_TB.tcl
+run 30 us
+run 30 us
+run 30 us
+run 30 us
+run 30 us
+run 30 us
+run 30 us
+run 30 us
+run 30 us
+run 30 us
+run 30 us
+run 30 us
+run 30 us
+run 30 us
+run 30 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+run 100 us
+run 100 us
+run 100 us
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+run 100 us
+run 100 us
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+run 100 us
+set_property -name {xsim.simulate.runtime} -value {300us} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+run 250 us
+run 250 us
+run 250 us
+run 250 us
+run 250 us
+run 250 us
+run 250 us
+run 250 us
+set_property -name {xsim.simulate.runtime} -value {1000us} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+run 500 us
+set_property -name {xsim.simulate.runtime} -value {3000us} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+run 1000 us
+run 1000 us
+run 1000 us
+run 1000 us
+run 1000 us
