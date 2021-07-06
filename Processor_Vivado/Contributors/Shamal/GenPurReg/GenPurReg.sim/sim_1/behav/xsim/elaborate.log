@@ -5,4 +5,24 @@ Using 2 slave threads.
 Starting static elaboration
 WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 8 for port 'instruction' [E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.srcs/sources_1/new/CORE.v:164]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.GENERAL_PURPOSE_REGISTER
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.MDDR
+Compiling module xil_defaultlib.REG_X
+Compiling module xil_defaultlib.MAT_X
+Compiling module xil_defaultlib.MAIN_ALU
+Compiling module xil_defaultlib.AC
+Compiling module xil_defaultlib.DECODER
+Compiling module xil_defaultlib.BUS_MULTIPLEXER
+Compiling module xil_defaultlib.CONTROL_UNIT
+Compiling module xil_defaultlib.REGISTER_SELECTOR
+Compiling module xil_defaultlib.CORE
+Compiling module xil_defaultlib.IRAM
+Compiling module xil_defaultlib.DRAM
+Compiling module xil_defaultlib.PROCESSOR
+Compiling module xil_defaultlib.PROCESSOR_TB
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot PROCESSOR_TB_behav
