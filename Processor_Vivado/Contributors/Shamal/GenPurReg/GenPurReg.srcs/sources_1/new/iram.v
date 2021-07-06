@@ -5,7 +5,7 @@ module IRAM(
     input [63:0] instr_in,
     output reg [63:0] instr_out
     );
-    reg [15:0] MEM [65535:0];
+    reg [15:0] MEM [1000:0];
     parameter FETCH = 8'd0;
     parameter NOP = 8'd3;
     parameter END = 8'd4;
