@@ -24,6 +24,6 @@ module MAIN_ALU ( input clk,
 //                        out= 16'd56;
                          if(out == 16'd0) zflag = 1'd1;
 
-                         $display("out :- %d z:- %d",out,zflag);
+                         //$display("out :- %d z:- %d",out,zflag);
                     end
 endmodule

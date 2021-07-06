@@ -5,7 +5,7 @@ module IRAM(
     input [63:0] instr_in,
     output reg [63:0] instr_out
     );
-    reg [15:0] MEM [1000:0];
+    reg [15:0] MEM [65535:0];
     parameter FETCH = 8'd0;
     parameter NOP = 8'd3;
     parameter END = 8'd4;
@@ -54,7 +54,7 @@ MEM[14] = 16'd12;
 
 //Comment:- load 15 k_ref
 MEM[15] = LOAD;
-MEM[16] = 16'd15;
+MEM[16] = 16'd406;
 MEM[17] = 16'd15;
 
 //Comment:- clr i
@@ -155,7 +155,7 @@ MEM[63] = STORM;
 
 //Comment:- inc 3 k
 MEM[64] = INC;
-MEM[65] = 16'd4;
+MEM[65] = 16'd1;
 MEM[66] = 16'd14;
 
 //Comment:- jump nk_flag TAG5

@@ -28,7 +28,7 @@ module PROCESSOR_TB;
     begin
         #(clk_period/2)
         clk = ~clk;
-        $display("finish:%b",finish);
+        //$display("finish:%b",finish);
         if(finish==4'b1111) $stop;
     end
 endmodule

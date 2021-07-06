@@ -641,6 +641,6 @@ end
 
 endcase
 
-$display("current instruction: %d MDDR:- %d" ,PS,MDDR);
+//$display("current instruction: %d MDDR:- %d" ,PS,MDDR);
 end
 endmodule

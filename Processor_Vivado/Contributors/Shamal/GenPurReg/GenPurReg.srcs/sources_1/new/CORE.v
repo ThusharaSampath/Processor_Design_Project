@@ -58,7 +58,7 @@ module CORE(
         DM_in <= wire_registers_busMultiplexer[2];
         finish <= finish_wire ;
         if(finish==1'd1) $display("finish");
-        $display("AR:- %d , I:- %d, I_ref:- %d, J:- %d, J_ref:- %d, base_A: %d, K:- %d, K_ref:- %d,base_B: %d, P:- %d, MAT_A:- %d, MAT_B:- %d, MAT_C:- %d" ,wire_registers_busMultiplexer[0],wire_registers_busMultiplexer[4],i_ref_wire,wire_registers_busMultiplexer[5],j_ref_wire,Base_A_wire,wire_registers_busMultiplexer[6],k_ref_wire,Base_B_wire,wire_registers_busMultiplexer[7],wire_registers_busMultiplexer[10],wire_registers_busMultiplexer[11],wire_registers_busMultiplexer[3]);
+        //$display("AR:- %d , I:- %d, I_ref:- %d, J:- %d, J_ref:- %d, base_A: %d, K:- %d, K_ref:- %d,base_B: %d, P:- %d, MAT_A:- %d, MAT_B:- %d, MAT_C:- %d" ,wire_registers_busMultiplexer[0],wire_registers_busMultiplexer[4],i_ref_wire,wire_registers_busMultiplexer[5],j_ref_wire,Base_A_wire,wire_registers_busMultiplexer[6],k_ref_wire,Base_B_wire,wire_registers_busMultiplexer[7],wire_registers_busMultiplexer[10],wire_registers_busMultiplexer[11],wire_registers_busMultiplexer[3]);
      end
      
      GENERAL_PURPOSE_REGISTER ID (.clk(clk), .write(1'd1), .data_in(proId),.data_out(wire_registers_busMultiplexer[12]));

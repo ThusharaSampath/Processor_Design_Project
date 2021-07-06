@@ -63,50 +63,50 @@ input clk,
         .current_micro_instruction(current_micro_instruction_wire_core1)
         );
 
-    CORE core2 (
-        .clk(clk),
-        .DM_out(data_from_DM_to_cpu[31:16]),
-        .IM_out(data_from_IM_to_cpu[31:16]),
-        .proId(proId1),
-        .IM_in(data_from_cpu_to_IM[31:16]),     
-        .DM_in(data_from_cpu_to_DM[31:16]),    
-        .DM_en(en_from_cpu_to_DM[1:1]),
-        .IM_en(en_from_cpu_to_IM[1:1]),
-        .AR_out(data_from_AR_to_M[31:16]),
-        .finish(finish_wire[1:1]),
-        .bus(bus_wire_core2),
-        .current_micro_instruction(current_micro_instruction_wire_core2)
-        );
+    // CORE core2 (
+    //     .clk(clk),
+    //     .DM_out(data_from_DM_to_cpu[31:16]),
+    //     .IM_out(data_from_IM_to_cpu[31:16]),
+    //     .proId(proId1),
+    //     .IM_in(data_from_cpu_to_IM[31:16]),     
+    //     .DM_in(data_from_cpu_to_DM[31:16]),    
+    //     .DM_en(en_from_cpu_to_DM[1:1]),
+    //     .IM_en(en_from_cpu_to_IM[1:1]),
+    //     .AR_out(data_from_AR_to_M[31:16]),
+    //     .finish(finish_wire[1:1]),
+    //     .bus(bus_wire_core2),
+    //     .current_micro_instruction(current_micro_instruction_wire_core2)
+    //     );
 
-        CORE core3 (
-        .clk(clk),
-        .DM_out(data_from_DM_to_cpu[47:32]),
-        .IM_out(data_from_IM_to_cpu[47:32]),
-        .proId(16'd2),
-        .IM_in(data_from_cpu_to_IM[47:32]),     
-        .DM_in(data_from_cpu_to_DM[47:32]),    
-        .DM_en(en_from_cpu_to_DM[2:2]),
-        .IM_en(en_from_cpu_to_IM[2:2]),
-        .AR_out(data_from_AR_to_M[47:32]),
-        .finish(finish_wire[2:2]),
-        .bus(bus_wire_core3),
-        .current_micro_instruction(current_micro_instruction_wire_core3)
-        );
+        // CORE core3 (
+        // .clk(clk),
+        // .DM_out(data_from_DM_to_cpu[47:32]),
+        // .IM_out(data_from_IM_to_cpu[47:32]),
+        // .proId(16'd2),
+        // .IM_in(data_from_cpu_to_IM[47:32]),     
+        // .DM_in(data_from_cpu_to_DM[47:32]),    
+        // .DM_en(en_from_cpu_to_DM[2:2]),
+        // .IM_en(en_from_cpu_to_IM[2:2]),
+        // .AR_out(data_from_AR_to_M[47:32]),
+        // .finish(finish_wire[2:2]),
+        // .bus(bus_wire_core3),
+        // .current_micro_instruction(current_micro_instruction_wire_core3)
+        // );
 
-        CORE core4 (
-        .clk(clk),
-        .DM_out(data_from_DM_to_cpu[63:48]),
-        .IM_out(data_from_IM_to_cpu[63:48]),
-        .proId(16'd3),
-        .IM_in(data_from_cpu_to_IM[63:48]),     
-        .DM_in(data_from_cpu_to_DM[63:48]),    
-        .DM_en(en_from_cpu_to_DM[3:3]),
-        .IM_en(en_from_cpu_to_IM[3:3]),
-        .AR_out(data_from_AR_to_M[63:48]),
-        .finish(finish_wire[3:3]),
-        .bus(bus_wire_core4),
-        .current_micro_instruction(current_micro_instruction_wire_core4)
-        );
+        // CORE core4 (
+        // .clk(clk),
+        // .DM_out(data_from_DM_to_cpu[63:48]),
+        // .IM_out(data_from_IM_to_cpu[63:48]),
+        // .proId(16'd3),
+        // .IM_in(data_from_cpu_to_IM[63:48]),     
+        // .DM_in(data_from_cpu_to_DM[63:48]),    
+        // .DM_en(en_from_cpu_to_DM[3:3]),
+        // .IM_en(en_from_cpu_to_IM[3:3]),
+        // .AR_out(data_from_AR_to_M[63:48]),
+        // .finish(finish_wire[3:3]),
+        // .bus(bus_wire_core4),
+        // .current_micro_instruction(current_micro_instruction_wire_core4)
+        // );
 
 
 
