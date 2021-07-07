@@ -8,7 +8,7 @@ module DECODER(
     output reg [0:0] out_MDDR_BUS,
     output reg [0:0] out_MDDR_IM,
     output reg [0:0] out_MDDR_DM,
-    output reg [0:0] out_BASE,
+    output reg [0:0] out_BASE_C,
     output reg [0:0] out_I,
     output reg [0:0] out_I_Ref,
     output reg [0:0] out_Base_A,
@@ -33,7 +33,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -52,7 +52,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -71,7 +71,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -90,7 +90,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -109,7 +109,7 @@ always @(*)
             out_MDDR_BUS=1;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -128,7 +128,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=1; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -147,7 +147,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=1; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -166,7 +166,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=1;    
+            out_BASE_C=1;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -185,7 +185,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=1;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -204,7 +204,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=1;   
             out_Base_A=0;  
@@ -223,7 +223,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=1;  
@@ -242,7 +242,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -261,7 +261,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -280,7 +280,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -299,7 +299,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -318,7 +318,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -337,7 +337,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -356,7 +356,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -375,7 +375,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=1; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -394,7 +394,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=1; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
@@ -414,7 +414,7 @@ always @(*)
             out_MDDR_BUS=0;
             out_MDDR_IM=0; 
             out_MDDR_DM=0; 
-            out_BASE=0;    
+            out_BASE_C=0;    
             out_I=0;       
             out_I_Ref=0;   
             out_Base_A=0;  
