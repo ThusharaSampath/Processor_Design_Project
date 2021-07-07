@@ -11,9 +11,9 @@ matA, matB = split_list(data)
 output = []
 roundsA = 0
 roundsB = 0
-i = len(matA)  # yatata gaana
-j = 0  # paththata
-k = 0  # paththata
+i = len(matA)
+j = 0
+k = 0
 
 
 for index, x in enumerate(matA):
