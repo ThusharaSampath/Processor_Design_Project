@@ -1,5 +1,11 @@
-# Processor_Design_Project
-semester 6 processor design project. A multi core processor that can be used to multiply two matrix.
+## Note
+Please check release branch for latest version
+## Motivation
+Task-oriented processor designing has increased dramatically in the last few years. Applications, such as computer vision, wireless baseband, neural networking requires more computational power and unique set of ability set. By designing a custom processor, those specific requirements can be addressed more effectively and adopt perfect architectures to achieve optimum performance on those specific aspects.
+Almost every resource-consuming application required matrix multiplication. Design a custom processor to optimized matrix multiplication is the objective of this project. We proposed a multicore processor with a special parallelization algorithm to speed up the calculation. In report discuss the architecture, components, and algorithms of the custom processor we proposed.  
 
-Resources :
-sheet :https://docs.google.com/spreadsheets/d/1xbQ8HC0MQnzdAJzEnUahmwrElIfb8Vuu3ZSK_z0h03o/edit?pli=1#gid=155327847
+## The Design Overview
+### Single core
+![Single core](/../release/Data%20Path/Data%20Path%20v8.png?raw=true "Singl Core")
+### Multicore processor
+![Multicore processor](/../release/Data%20Path/Multi%20Core.png?raw=true "Multicore Processor")
