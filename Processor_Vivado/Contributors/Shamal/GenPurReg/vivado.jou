@@ -15,3 +15,9 @@ update_compile_order -fileset sources_1
 launch_simulation
 source PROCESSOR_TB.tcl
 synth_design -rtl -name rtl_1
+refresh_design
+close_design
+synth_design -rtl -name rtl_1
+close_sim
+synth_design -rtl -name rtl_1
+synth_design -rtl -name rtl_1
