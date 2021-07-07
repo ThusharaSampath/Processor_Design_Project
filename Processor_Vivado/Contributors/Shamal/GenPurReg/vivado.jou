@@ -2,10 +2,10 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Tue Jul  6 23:40:50 2021
-# Process ID: 23068
+# Start of session at: Wed Jul  7 12:21:47 2021
+# Process ID: 37920
 # Current directory: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12096 E:\Acedemic\sem 5\Processor_Design_Project\Processor_Vivado\Contributors\Shamal\GenPurReg\GenPurReg.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent29524 E:\Acedemic\sem 5\Processor_Design_Project\Processor_Vivado\Contributors\Shamal\GenPurReg\GenPurReg.xpr
 # Log file: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/vivado.log
 # Journal file: E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg\vivado.jou
 #-----------------------------------------------------------
@@ -13,6 +13,3 @@ start_gui
 open_project {E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.xpr}
 update_compile_order -fileset sources_1
 synth_design -rtl -name rtl_1
-launch_simulation
-launch_simulation
-source PROCESSOR_TB.tcl
