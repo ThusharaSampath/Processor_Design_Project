@@ -121,7 +121,7 @@ module CORE(
         .out_MDDR_BUS(wire_decoder_registers[3]),
         .out_MDDR_IM(wire_decoder_registers[4]),
         .out_MDDR_DM(wire_decoder_registers[5]),
-        .out_BASE_C(wire_decoder_registers[6]),
+        .out_Base_C(wire_decoder_registers[6]),
         .out_I(wire_decoder_registers[7]),
         .out_I_Ref(wire_decoder_registers[8]),
         .out_Base_A(wire_decoder_registers[9]),
