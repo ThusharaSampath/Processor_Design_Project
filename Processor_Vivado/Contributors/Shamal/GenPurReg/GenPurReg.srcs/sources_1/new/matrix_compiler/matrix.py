@@ -22,7 +22,7 @@ for index, x in enumerate(matA):
     roundsA += len(matA[index])
 for index, x in enumerate(matB):
     matB[index] = list(map(int, matB[index].strip().split()))
-    k = len(matB[index])  # paththata
+    k = len(matB[index])
     roundsB += len(matB[index])
 if(j == len(matB)):
     print("Matrices can be multiplied")
