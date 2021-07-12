@@ -40,7 +40,7 @@ module IRAM(
     MEM[12] = LOAD; //load 4 j_ref
     MEM[13] = 16'd4;
     MEM[14] = 16'd12;
-    MEM[15] = LOAD;
+    MEM[15] = LOAD; //load 31 to k_ref 
     MEM[16] = 16'd31;
     MEM[17] = 16'd15;
     MEM[18] = CLR;
@@ -90,7 +90,7 @@ module IRAM(
     MEM[62] = 16'd20;
     MEM[63] = STORM;
     MEM[64] = INC;
-    MEM[65] = 16'd1;
+    MEM[65] = 16'd4; //num core
     MEM[66] = 16'd14;
     MEM[67] = JUMP;
     MEM[68] = 16'd7;
