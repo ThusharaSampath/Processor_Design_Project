@@ -90,7 +90,7 @@ module IRAM(
     MEM[62] = 16'd20;
     MEM[63] = STORM;
     MEM[64] = INC;
-    MEM[65] = 16'd4; //num core
+    MEM[65] = 16'd1; //num core
     MEM[66] = 16'd14;
     MEM[67] = JUMP;
     MEM[68] = 16'd7;

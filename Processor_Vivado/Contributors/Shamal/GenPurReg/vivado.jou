@@ -12,3 +12,24 @@
 start_gui
 open_project {E:/Acedemic/sem 5/Processor_Design_Project/Processor_Vivado/Contributors/Shamal/GenPurReg/GenPurReg.xpr}
 update_compile_order -fileset sources_1
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
+launch_simulation
+source PROCESSOR_TB.tcl
+close_sim
